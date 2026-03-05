@@ -25,7 +25,16 @@
     "name": "Get Started Free",
     "url": "https://app.getfieldflow.io/sign-up"
   },
-  "tabs": [],
+  "tabs": [
+    {
+      "name": "FieldFlow Directory",
+      "url": "saas"
+    },
+    {
+      "name": "FieldFlow Sync",
+      "url": "sync"
+    }
+  ],
   "anchors": [
     {
       "name": "Website",
@@ -42,42 +51,48 @@
     {
       "group": "Getting Started",
       "pages": [
-        "getting-started/introduction",
-        "getting-started/quick-start",
-        "getting-started/invite-your-team"
+        "saas/getting-started/introduction",
+        "saas/getting-started/quick-start",
+        "saas/getting-started/invite-your-team"
       ]
     },
     {
       "group": "Core Concepts",
       "pages": [
-        "core-concepts/how-sync-works",
-        "core-concepts/directory-structure",
-        "core-concepts/field-mapping",
-        "core-concepts/taxonomies-and-filters"
+        "saas/core-concepts/how-sync-works",
+        "saas/core-concepts/directory-structure",
+        "saas/core-concepts/field-mapping",
+        "saas/core-concepts/taxonomies-and-filters"
       ]
     },
     {
       "group": "Embedding",
       "pages": [
-        "embedding/embed-on-any-site",
-        "embedding/wordpress",
-        "embedding/custom-html"
+        "saas/embedding/embed-on-any-site",
+        "saas/embedding/wordpress",
+        "saas/embedding/custom-html"
       ]
     },
     {
       "group": "Account & Billing",
       "pages": [
-        "account/plans-and-limits",
-        "account/managing-your-team",
-        "account/billing-and-invoices"
+        "saas/account/plans-and-limits",
+        "saas/account/managing-your-team",
+        "saas/account/billing-and-invoices"
       ]
     },
     {
       "group": "Troubleshooting",
       "pages": [
-        "troubleshooting/sync-errors",
-        "troubleshooting/google-sheets-permissions",
-        "troubleshooting/embed-not-showing"
+        "saas/troubleshooting/sync-errors",
+        "saas/troubleshooting/google-sheets-permissions",
+        "saas/troubleshooting/embed-not-showing"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
+        "sync/getting-started/introduction"
       ]
     }
   ],
