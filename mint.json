@@ -1,0 +1,108 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "FieldFlow",
+  "logo": {
+    "light": "/logo/fieldflow-logo-light.svg",
+    "dark": "/logo/fieldflow-logo-dark.svg"
+  },
+  "favicon": "/logo/fieldflow-favicon.svg",
+  "colors": {
+    "primary": "#2563eb",
+    "light": "#3b82f6",
+    "dark": "#1d4ed8",
+    "anchors": {
+      "from": "#2563eb",
+      "to": "#1d4ed8"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Dashboard",
+      "url": "https://app.getfieldflow.io"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started Free",
+    "url": "https://app.getfieldflow.io/sign-up"
+  },
+  "tabs": [],
+  "anchors": [
+    {
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://getfieldflow.io"
+    },
+    {
+      "name": "Support",
+      "icon": "envelope",
+      "url": "mailto:hello@getfieldflow.io"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/introduction",
+        "getting-started/quick-start",
+        "getting-started/invite-your-team"
+      ]
+    },
+    {
+      "group": "Core Concepts",
+      "pages": [
+        "core-concepts/how-sync-works",
+        "core-concepts/directory-structure",
+        "core-concepts/field-mapping",
+        "core-concepts/taxonomies-and-filters"
+      ]
+    },
+    {
+      "group": "Embedding",
+      "pages": [
+        "embedding/embed-on-any-site",
+        "embedding/wordpress",
+        "embedding/custom-html"
+      ]
+    },
+    {
+      "group": "Account & Billing",
+      "pages": [
+        "account/plans-and-limits",
+        "account/managing-your-team",
+        "account/billing-and-invoices"
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        "troubleshooting/sync-errors",
+        "troubleshooting/google-sheets-permissions",
+        "troubleshooting/embed-not-showing"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://getfieldflow.io"
+  },
+  "font": {
+    "headings": {
+      "family": "Inter"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search FieldFlow docs..."
+  },
+  "metadata": {
+    "og:title": "FieldFlow Documentation",
+    "og:description": "Learn how to turn your Google Sheets into beautiful, searchable web directories.",
+    "og:image": "https://getfieldflow.io/og-image.png",
+    "twitter:site": "@getfieldflow"
+  }
+}

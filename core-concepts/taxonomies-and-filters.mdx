@@ -1,0 +1,24 @@
+---
+title: Taxonomies and Filters
+description: How categories and filters work in the directory.
+---
+
+**Taxonomies** are labeled sets of terms (e.g. “Category” with terms “Food”, “Housing”, “Health”) that you attach to a Sheet column. In the directory they become **filters**: visitors pick one or more terms to narrow the list.
+
+## How taxonomies are filled
+
+- You configure a taxonomy for a project and point it at a **column index** (which column in the Sheet holds the values).
+- The taxonomy has a **type** (e.g. flat list or hierarchical) and optionally a **separator** for multiple values in one cell (e.g. comma). When sync runs, each cell in that column is parsed into terms; missing or unknown values are skipped.
+- Terms are created or matched by the taxonomy service; each synced record is then linked to the right terms. The directory API returns those terms so the UI can show filter panels and counts.
+
+## How filters behave in the directory
+
+- The public directory page and the embed show one filter section per taxonomy (e.g. “Category”, “Region”). Visitors select terms; the list and URL update. The URL includes `filter_<taxonomyId>=<termIds>` so you can share a pre-filtered view.
+- You can allow **multiple** selections per taxonomy (e.g. “Food” and “Housing”) so that records matching any of the selected terms are shown.
+- Filter state is in the URL, so “back” and “share” work as expected.
+
+<Note title="Filters and search">
+  Filters and search work together: visitors can type in the search box and also apply taxonomy filters. The directory request sends both to the API, which returns the combined result set.
+</Note>
+
+If you change taxonomy configuration or the column content, run a sync so record–term links are updated before visitors use the filters.

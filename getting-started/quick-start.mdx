@@ -1,0 +1,27 @@
+---
+title: Quick Start
+description: Connect a Sheet, sync, and embed in a few steps.
+---
+
+Get from a Google Sheet to a live directory in four steps.
+
+<Steps>
+  <Step title="Sign up and create a project">
+    Sign up at [app.getfieldflow.io](https://app.getfieldflow.io), then create a new project. Give it a name (e.g. “Community Resources”).
+  </Step>
+  <Step title="Connect Google Sheets">
+    In project settings, connect Google (one-time OAuth). Pick the spreadsheet and worksheet (e.g. Sheet1) that holds your data. The first row should be headers.
+  </Step>
+  <Step title="Map columns and sync">
+    In **Field mapping**, assign each Sheet column to a field (e.g. column A → Name, B → Description). Save, then click **Sync now**. FieldFlow pulls the rows, applies your plan’s row limit, and stores them. Sync runs in the background; when it finishes, the directory has data.
+  </Step>
+  <Step title="Publish and embed">
+    In **Publish**, copy the embed snippet. Add a **div** with id `fieldflow-directory` (or `fieldflow-quiz` for quiz mode) and the script tag, then call `FieldFlow.init()` with your project ID and API key. The directory appears in that container.
+  </Step>
+</Steps>
+
+<Note title="Layout required">
+  The public directory and embed only work after a **card layout** is saved (Configure → Display). If you open the directory before that, you’ll see “Directory not configured.”
+</Note>
+
+After the first successful sync, you’ll get an email confirming the sync; if a sync fails after all retries, you’ll get an email only if you’ve enabled “Email me when sync fails” in your preferences.

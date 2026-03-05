@@ -1,0 +1,28 @@
+---
+title: Billing and Invoices
+description: How subscriptions and payments work.
+---
+
+FieldFlow uses **Stripe** for subscriptions and invoices (through FieldFlow Labs LLC, not a third-party billing provider). You manage your plan and payment method in the dashboard and via Stripe’s customer portal.
+
+<Steps>
+  <Step title="Subscribe">
+    From the dashboard (e.g. **Settings → Billing** or the pricing page), choose a plan and go to checkout. You’re sent to Stripe to enter payment details and complete the subscription.
+  </Step>
+  <Step title="Webhooks update your org">
+    When Stripe confirms the subscription, FieldFlow’s webhooks update your organization’s plan (e.g. starter, pro, agency). Your project and row limits apply immediately.
+  </Step>
+  <Step title="Invoices and updates">
+    Stripe sends invoices and receipts to your email. To update your card, cancel, or change plan, use the **Customer portal** link (if shown in the dashboard) or the link in Stripe’s emails. That opens Stripe’s hosted page where you can manage subscription and payment method.
+  </Step>
+</Steps>
+
+<Note title="Failed payments">
+  If a payment fails, Stripe may retry. FieldFlow’s webhooks handle `invoice.payment_failed` and can send you an email. Update your payment method in the Stripe portal to avoid service interruption.
+</Note>
+
+<Warning title="Trial and cancellation">
+  If you’re on a trial, it may end on a set date; when the subscription is cancelled or deleted in Stripe, webhooks set your org back to free (or the appropriate state), and project/row/API limits apply immediately. Export or backup any data you need before cancelling.
+</Warning>
+
+For invoice copies, payment history, or tax documents, use the Stripe customer portal or the links in Stripe’s emails. FieldFlow does not store your full card number; all payment data stays in Stripe.

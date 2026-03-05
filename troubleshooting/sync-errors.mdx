@@ -1,0 +1,27 @@
+---
+title: Sync Errors
+description: What to do when a sync fails or shows an error.
+---
+
+Sync runs in a **background worker**. When you click **Sync now**, a job is queued; if it fails, the sync log shows **Failed** and an error message. Here’s how to track it down.
+
+<Steps>
+  <Step title="Check the sync log">
+    In the project’s **Sync** (or **Settings → Sync**) tab, open the latest sync. If status is **Failed**, the error message is stored there (e.g. “Not found”, “Permission denied”, “Rate limit exceeded”).
+  </Step>
+  <Step title="Common causes">
+    - **Google Sheets** — Sheet deleted, renamed, or shared so the connected Google account no longer has access. Re-share the Sheet with the account that’s connected to FieldFlow, or reconnect Google for the org.
+    - **Worksheet name** — The project’s worksheet (e.g. Sheet1) was renamed or removed. Update the project to use the correct sheet tab name.
+    - **Rate limits** — Google Sheets API has quotas. Large or frequent syncs can hit limits; wait and try again, or reduce sync frequency.
+    - **Worker/queue** — If the worker isn’t running or Redis is down, jobs stay in the queue. On FieldFlow’s hosted service, this is handled for you; if you self-host, ensure the worker process and Redis are up.
+  </Step>
+  <Step title="Retries and email">
+    The worker retries failed jobs (e.g. 3 attempts). Only after **all** retries fail do we send the “sync failed” email—and only if you’ve enabled “Email me when sync fails” in your **Preferences**.
+  </Step>
+</Steps>
+
+<Note title="First sync success">
+  When the first sync for a project completes successfully, we send a one-time “first sync success” email with a link to the publish/settings page. That’s normal and not an error.
+</Note>
+
+If the error message is unclear or persists after fixing access and worksheet name, contact support with the project ID and the exact error text from the sync log.

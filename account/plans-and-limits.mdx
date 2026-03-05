@@ -1,0 +1,23 @@
+---
+title: Plans and Limits
+description: What each plan allows for projects, rows, and API calls.
+---
+
+Your organization has a **plan** (free, starter, pro, or agency). The plan sets how many projects you can have, how many rows per project can be synced, and how many API calls per month the directory and embeds can make.
+
+| Plan    | Projects | Rows per project | API calls/month |
+|---------|----------|-------------------|------------------|
+| Free    | 0        | 0                 | 0                |
+| Starter | 1        | 1,000             | 10,000           |
+| Pro     | 5        | 10,000            | 100,000          |
+| Agency  | Unlimited| 50,000            | 500,000          |
+
+<Note title="Free plan">
+  The free plan has zero projects, rows, and API calls—it’s for accounts that haven’t subscribed yet. To create projects and sync data, you need at least Starter.
+</Note>
+
+When you **sync**, only the first N rows (per your plan) are imported. If your Sheet has more rows, the sync log will show that the row limit was hit and which plan applied. The directory and embed then show only the synced rows.
+
+API calls are counted when the public directory or embed fetches data (layout, records, filters). Cached responses may reduce calls. If you exceed the monthly limit, requests may be rate-limited or blocked until the next period—check the dashboard or contact support for current behavior.
+
+Upgrades and downgrades are handled through billing (Stripe). Changing plan updates the limits for your organization immediately.

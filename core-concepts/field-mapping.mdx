@@ -1,0 +1,24 @@
+---
+title: Field Mapping
+description: How Sheet columns become directory fields.
+---
+
+**Field mapping** is the link between your Google Sheet columns and the fields used in the directory (cards, search, sort). You set it up in the dashboard under the project’s Field mapping / Setup step.
+
+## How it works
+
+- Each mapping ties a **column** (by letter, e.g. A, B, or by index) to a **field name** (e.g. `name`, `description`, `email`). The first row of the Sheet is treated as headers; the sync service uses your mapping to read each row and build a record.
+- When sync runs, it reads only the columns you’ve mapped. Unmapped columns are ignored. Empty cells become empty or missing values in the directory.
+- Field names you define here are the same ones used in the **layout** (which field is the title, which show on the card, which are searchable/sortable) and in the public API.
+
+<Card title="Stable row identity" icon="fingerprint">
+  Each row is identified by row number and a hash of its content. So if you reorder columns or change a mapping, the same logical row is still updated or removed correctly on the next sync instead of creating duplicates.
+</Card>
+
+## Best practices
+
+- Map at least one column to the field you use as the **title** in the card layout so each record has a clear label.
+- For search and filters to work well, map columns that hold names, categories, or other filterable values to the right fields and configure search/filters in the layout and taxonomies.
+- If you add or remove columns in the Sheet, update the field mapping and run a sync so the directory matches.
+
+You don’t have to map every column—only the ones you want in the directory and in filters/search/sort.

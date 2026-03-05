@@ -1,0 +1,33 @@
+---
+title: Custom HTML
+description: Paste the embed snippet into any HTML page or site builder.
+---
+
+If your site lets you add custom HTML (a raw HTML block, a “code” widget, or the page source), you can drop in the FieldFlow embed with no extra setup.
+
+## What to add
+
+1. **Container** — A `<div>` with id `fieldflow-directory` (directory) or `fieldflow-quiz` (quiz). The embed will render inside it.
+2. **Script tag** — Load the FieldFlow script from your app, e.g. `https://app.getfieldflow.io/embed.js`.
+3. **Init call** — A short `<script>` that calls `FieldFlow.init({ projectId: "YOUR_PROJECT_ID", apiKey: "YOUR_API_KEY", container: "#fieldflow-directory" })` after the script loads. Optionally add `apiBaseUrl`, `detailUrlTemplate`, or `options: { showSearch: true, showFilters: true, itemsPerPage: 20 }`.
+
+<Card title="Get the snippet" icon="copy">
+  In the FieldFlow dashboard, open your project → **Publish**. The exact HTML snippet is there for directory, quiz, or quiz+directory mode. Copy and paste it into your page; replace the placeholder API key if needed.
+</Card>
+
+## Example (directory mode)
+
+```html
+<div id="fieldflow-directory"></div>
+<script src="https://app.getfieldflow.io/embed.js"></script>
+<script>
+  window.FieldFlow.init({
+    projectId: "your-project-id",
+    apiKey: "ff_live_xxxx",
+    container: "#fieldflow-directory",
+    options: { showSearch: true, showFilters: true, itemsPerPage: 20 }
+  });
+</script>
+```
+
+The script automatically loads `embed.css` from the same origin. No build step or npm install—just HTML and the script URL. Works in Wix, Webflow, Notion embeds, or any static HTML page.

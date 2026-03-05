@@ -1,0 +1,31 @@
+---
+title: Embed Not Showing
+description: Why the directory or quiz might not appear and how to fix it.
+---
+
+If the embed area is blank or shows an error, work through these checks.
+
+<Steps>
+  <Step title="Container and script">
+    Ensure the page has a `<div>` with id `fieldflow-directory` (or `fieldflow-quiz` for quiz), and that the FieldFlow script is loaded from the correct URL (e.g. `https://app.getfieldflow.io/embed.js`). Then confirm `FieldFlow.init()` is called with that container selector (e.g. `container: "#fieldflow-directory"`). If the script loads after your init call, the init may run before `FieldFlow` exists—call init in a callback or after the script tag.
+  </Step>
+  <Step title="Project ID and API key">
+    Use the exact **project ID** from the dashboard (project URL or Publish tab) and a valid **API key** for the same organization. Wrong or revoked keys return 401; the embed may stay blank or show a generic error. Create a new key in the dashboard if needed.
+  </Step>
+  <Step title="Layout configured">
+    The directory does not render until a **card layout** is saved (Configure → Display). If not configured, the app shows “Directory not configured.” Save a layout with at least a title field and try again.
+  </Step>
+  <Step title="CORS and network">
+    The embed fetches data from the FieldFlow API. If your site is on a different domain, the API must allow that origin (CORS). If the browser blocks the request, check the console (F12 → Network or Console). For API key issues you’ll often see 401 in the Network tab.
+  </Step>
+</Steps>
+
+<Note title="Theme conflicts">
+  FieldFlow injects scoped CSS so theme styles don’t override the directory inside `#fieldflow-directory` and `#fieldflow-quiz`. If the directory loads but looks broken, try wrapping the embed in a plain div with no extra classes, or check for aggressive global CSS (e.g. `!important` on buttons or inputs).
+</Note>
+
+<Warning title="apiBaseUrl">
+  If you host the app elsewhere or use a custom domain, set `apiBaseUrl` in `FieldFlow.init()` to the base URL of your FieldFlow app so the script and API requests use the right host. Wrong or missing `apiBaseUrl` can cause the embed to load the wrong script or fail to fetch data.
+</Warning>
+
+If the container is visible, the script loads, init runs with the right IDs and key, and the layout is saved, the directory should appear. If it still doesn’t, open the browser console and note any errors or failed network requests to share with support.

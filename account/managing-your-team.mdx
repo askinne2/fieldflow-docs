@@ -1,0 +1,24 @@
+---
+title: Managing Your Team
+description: Roles, invitations, and who can do what.
+---
+
+Team management is **organization-level**. Everyone in the same organization shares its projects, API keys, and billing. You manage members and invitations from the **Team** (or organization) area in the dashboard.
+
+## Roles
+
+- **Owner** — Full control: billing, delete org, invite/remove members, change roles. There is typically one owner per org.
+- **Admin** — Can invite and remove members (except the owner), manage projects, run syncs, create/revoke API keys. Cannot delete the organization or change billing.
+- **Member** — Can work on projects (edit settings, map fields, sync, use embed code). Access is determined by org membership; there is no per-project permission in the current model.
+
+<Card title="Invitations" icon="mail">
+  Only owners and admins can invite. Invitations are sent by email (via Clerk); the invitee signs in or signs up and accepts. Pending invitations expire after **30 days**. You can cancel a pending invite so the same email can be invited again if needed.
+</Card>
+
+## What’s shared
+
+- **Projects** — All members of the org see the same project list and can open any project, sync, and copy embed code.
+- **API keys** — Keys are created for the organization. Any member can create or list keys (and revoke if the UI allows). The same key is used in embeds for any project in that org.
+- **Google connection** — The Google account connected for the org is used for all syncs in that org. One connection per org, not per user.
+
+If someone leaves, an owner or admin can remove them from the organization. They lose access to all projects and API keys for that org. Invitations can be cancelled from the same Team screen.

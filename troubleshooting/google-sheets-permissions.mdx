@@ -1,0 +1,27 @@
+---
+title: Google Sheets Permissions
+description: Fix access and sharing so sync can read your Sheet.
+---
+
+FieldFlow reads your Google Sheet using the **organization’s** Google connection. Sync will fail if that account can’t access the Sheet or the right tab.
+
+<Steps>
+  <Step title="Confirm which account is connected">
+    The Google account linked in the dashboard (e.g. under organization or project settings) is the one used for sync. Make sure the Sheet is shared with **that** account (viewer or editor is enough for read-only sync).
+  </Step>
+  <Step title="Share the Sheet">
+    In Google Sheets, click **Share**. Add the connected account’s email (or a group that includes it) with at least **Viewer** access. If the Sheet is in a shared drive, the account must have access to that drive.
+  </Step>
+  <Step title="Check the worksheet">
+    The project is configured to use a specific **worksheet name** (e.g. Sheet1). If you renamed or deleted that tab, update the project’s data source setting to the current tab name. The first row must be headers; data starts on row 2.
+  </Step>
+  <Step title="Reconnect if needed">
+    If the account lost access (e.g. password change, revoke), or you need to use a different Google account, disconnect and reconnect Google for the organization. Then run a sync again.
+  </Step>
+</Steps>
+
+<Warning title="Org connection, not personal">
+  Sync uses the **organization’s** Google connection. Connecting your personal Google in the dashboard links it to the org—everyone in the org’s syncs use that connection. There is no per-user Google for sync.
+</Warning>
+
+If you see “Permission denied” or “Not found” in the sync log, it almost always means the connected account doesn’t have access to that Sheet or worksheet. Fix sharing or the worksheet name, then sync again.

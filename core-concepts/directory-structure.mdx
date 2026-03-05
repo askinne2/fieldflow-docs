@@ -1,0 +1,25 @@
+---
+title: Directory Structure
+description: How the public directory page and embed are built from your project.
+---
+
+The **directory** is the live list of records (cards) that visitors see. It can be the standalone public page (`/d/[projectId]`) or the same UI inside an embed on your site.
+
+## What the directory shows
+
+- **Records** — One per synced row, rendered as a card. Card layout and which fields show come from the project’s **layout** (Configure → Display).
+- **Search** — A search box that filters records by the fields you’ve configured for search.
+- **Filters** — One panel per **taxonomy** (e.g. Category, Region). Visitors pick terms to narrow the list; the URL updates so filtered views can be shared.
+- **Sort** — Sort options you define (e.g. by name, date). The current sort is reflected in the URL.
+- **Map view** — If the project has map view enabled and records have coordinates, visitors can switch to a map; the list can also be grouped by a taxonomy.
+
+<Note title="Layout required">
+  The directory will not load until a card layout is saved. Without it, the public page and embed show “Directory not configured.”
+</Note>
+
+## Where it runs
+
+- **Standalone** — The FieldFlow app serves the full directory at a URL like `https://app.getfieldflow.io/d/[projectId]`. Same UI, same search/filters/sort/map.
+- **Embed** — You put a div and script on your site and call `FieldFlow.init()`. The same directory UI is rendered inside that div, and optionally you can pass a `detailUrlTemplate` so “View details” links go to a page on your site (e.g. `/resources/{{externalId}}`).
+
+Theme (light/dark) is respected from the visitor’s browser or from the embed container. Card colors and styling come from the project’s layout customization, not from the host page.

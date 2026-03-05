@@ -1,0 +1,30 @@
+---
+title: How Sync Works
+description: What happens when you click Sync now and how the worker processes your Sheet.
+---
+
+When you click **Sync now**, FieldFlow doesn’t read your Sheet on the spot. It enqueues a **sync job** that a background worker processes. That keeps the dashboard responsive and allows retries if something fails.
+
+<Steps>
+  <Step title="Job is queued">
+    The API adds a job to the sync queue (BullMQ) with the project ID and your user ID. You see a “processing” state in the dashboard.
+  </Step>
+  <Step title="Worker runs the sync">
+    A worker picks up the job and calls the sync service. It fetches the project’s Google Sheet (using your org’s connected Google account) and the worksheet name (e.g. Sheet1). The first row is treated as headers; the rest are data rows.
+  </Step>
+  <Step title="Rows are processed in batches">
+    Rows are handled in batches of 500. For each row, the worker applies your **field mappings** (column letter or index → field name) and any **taxonomies** (e.g. a column mapped to categories). Each row gets a stable ID based on row number and content hash so the same row is updated instead of duplicated. Rows that no longer exist in the Sheet are removed from the directory data.
+  </Step>
+  <Step title="Plan limits apply">
+    Your organization’s plan has a **row limit** per project. If the Sheet has more rows than that, only the first N rows are synced and the sync log notes that the limit was hit.
+  </Step>
+  <Step title="Log and notifications">
+    When the job finishes, a sync log is updated (records processed, created, updated, deleted). If this was the project’s first successful sync, you get a “first sync success” email. If the job fails after all retries (e.g. 3 attempts), and you’ve turned on “Email me when sync fails” in preferences, you get a sync-failure email with a link to the project’s sync tab.
+  </Step>
+</Steps>
+
+<Note title="Manual only for now">
+  Sync is triggered manually from the dashboard. Scheduled (e.g. daily) syncs are on the roadmap.
+</Note>
+
+Sync uses the **organization’s** Google connection, not a single user’s. Whoever set up the project and connected Google must have connected it for the org so the worker can read the Sheet.

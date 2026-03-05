@@ -1,0 +1,24 @@
+---
+title: Embed on Any Site
+description: Use the script snippet to show your directory or quiz on any webpage.
+---
+
+The embed is a small JavaScript snippet that loads the FieldFlow directory (or quiz) inside a **container** on your page. It works on any site that allows a custom div and script tag: WordPress, Wix, Squarespace, or a static HTML site.
+
+## Basic setup
+
+1. **Add a container** — A `<div>` with id `fieldflow-directory` (for the directory) or `fieldflow-quiz` (for quiz-only mode). The embed will render inside this element.
+2. **Load the script** — Include the FieldFlow script from your app URL (e.g. `https://app.getfieldflow.io/embed.js`). The script will also load `embed.css` from the same origin so styles apply.
+3. **Initialize** — After the script loads, call `FieldFlow.init()` with at least `projectId`, `apiKey`, and `container` (the div’s CSS selector, e.g. `#fieldflow-directory`).
+
+<Card title="API key" icon="key">
+  The API key is an organization key from the dashboard (Settings → API keys or the project’s Publish tab). It is sent in the `X-API-Key` header when the embed fetches directory data. Keep it private; don’t commit it in public repos. For browser embeds, the key is visible in network tab—use allowed-origins or other restrictions when the API supports them.
+</Card>
+
+## Embed modes
+
+- **directory** (default) — Full directory: search, filters, cards, optional map. Use container `#fieldflow-directory`.
+- **quiz** — Quiz only; when the user finishes, your `onComplete(filters, queryString)` runs so you can redirect (e.g. `window.location = "/resources?" + queryString`). Use container `#fieldflow-quiz`.
+- **quiz+directory** — Quiz first, then directory in the same widget; “Start Over” resets to the quiz.
+
+Optional: `detailUrlTemplate` lets “View details” open a URL on your site, e.g. `/resources/{{externalId}}`. `apiBaseUrl` overrides the base URL used to load the script and API (useful for self-hosted or staging).

@@ -1,0 +1,25 @@
+---
+title: WordPress
+description: Embed your FieldFlow directory or quiz on a WordPress site.
+---
+
+You can embed FieldFlow on WordPress by adding the same snippet you use on any site: a container div and the FieldFlow script, then `FieldFlow.init()` with your project ID and API key.
+
+<Steps>
+  <Step title="Add the container">
+    In a block or shortcode, add a `<div>` with id `fieldflow-directory` (or `fieldflow-quiz` for quiz mode). For example in a Custom HTML block or a shortcode that outputs that div.
+  </Step>
+  <Step title="Load the script and init">
+    Enqueue or include the FieldFlow script from your app URL (e.g. `https://app.getfieldflow.io/embed.js`). After it loads, run `FieldFlow.init({ projectId: "...", apiKey: "...", container: "#fieldflow-directory" })`. You can do this in a small snippet in the block, in a custom plugin, or in theme footer code.
+  </Step>
+</Steps>
+
+<Note title="No official plugin yet">
+  A lightweight WordPress “display only” plugin (shortcode + optional block) is on the roadmap. Until then, use a Custom HTML block or a simple custom shortcode that outputs the div and script as in [Embed on any site](/embedding/embed-on-any-site).
+</Note>
+
+<Warning title="Theme styles">
+  The embed injects scoped overrides so that theme styles (e.g. Elementor buttons and typography) don’t break the directory UI inside `#fieldflow-directory` and `#fieldflow-quiz`. If you still see odd styling, try wrapping the embed in a minimal wrapper div with limited theme scope.
+</Warning>
+
+Use **detailUrlTemplate** if you want “View details” to open a WordPress page, e.g. `/resources/{{externalId}}` for a page that uses the record ID in the URL.

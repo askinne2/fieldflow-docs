@@ -1,0 +1,28 @@
+---
+title: Inviting Your Team
+description: Add members to your organization so they can manage projects and syncs.
+---
+
+Only **owners** and **admins** of an organization can invite new members. Everyone you invite gets access to that organization’s projects and can sync, edit settings, and use the same API keys.
+
+<Steps>
+  <Step title="Open Team">
+    In the dashboard, go to **Team** (or your org’s settings) where you manage members and invitations.
+  </Step>
+  <Step title="Invite by email">
+    Enter the person’s email and choose a role (e.g. Admin or Member). Submit. FieldFlow sends an invitation email from Clerk with a link to accept.
+  </Step>
+  <Step title="They accept">
+    The invitee clicks the link, signs in or creates an account (Clerk handles this), and is added to your organization. Invitations expire after **30 days** if not accepted.
+  </Step>
+</Steps>
+
+<Note title="Already a member?">
+  You can’t invite an email that’s already in the organization. If someone has a pending invite, you need to cancel that invite before sending a new one to the same email.
+</Note>
+
+<Warning title="Roles">
+  Only owners and admins can invite or cancel invitations. If you don’t see the invite option, your role doesn’t have permission—ask an owner or admin to invite you or change your role.
+</Warning>
+
+After acceptance, the new member can open the same projects, run syncs, and use the embed code. API keys are organization-scoped, so they’re shared by everyone in the org.
