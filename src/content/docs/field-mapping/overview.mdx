@@ -1,0 +1,37 @@
+---
+title: Field Mapping
+description: Tell FieldFlow what each column in your spreadsheet represents.
+---
+
+Field mapping is how you tell FieldFlow what your data means. A column called "Phone" might contain phone numbers, but FieldFlow needs you to confirm that so it can format and display it correctly.
+
+## How it works
+
+1. Go to your project's **Configure > Fields** tab
+2. You'll see every column from your Google Sheet listed
+3. For each column, you can set:
+   - **Field name** — what to call this field in the directory
+   - **Field type** — how FieldFlow should treat the data (text, URL, image, phone, etc.)
+   - **Visible** — whether this field shows up in directory cards
+   - **Label** — the display label users see
+
+## Auto-detection
+
+FieldFlow tries to auto-detect field types based on your data. For example:
+- A column full of URLs will be detected as **URL**
+- A column with image links will be detected as **Image**
+- A column with comma-separated categories might be detected as **Taxonomy**
+
+You can always override the auto-detected type.
+
+## Tips
+
+- You don't need to map every column. Only map the ones you want in your directory
+- Field names should be short and clear (they appear in the layout builder and filters)
+- If a column contains multiple categories separated by commas, set it as **Taxonomy** type
+
+## Next step
+
+Check the Field Types Reference for details on each type and when to use it.
+
+**Next:** [Field Types Reference →](/field-mapping/field-types/)

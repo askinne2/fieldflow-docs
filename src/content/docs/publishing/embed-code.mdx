@@ -1,0 +1,80 @@
+---
+title: Embed Code
+description: Get the embed snippet for your directory and customize its options.
+---
+
+The embed code is a small HTML snippet you paste into your website. It loads your FieldFlow directory directly on your page.
+
+## Get your embed code
+
+1. Go to your project's **Publish** tab
+2. In the **Embed on your site** section:
+   - Choose an **embed type**: Directory only, Quiz only, or Quiz + Directory
+   - Choose a **theme**: System (follows visitor's device), Light, or Dark
+3. Copy the generated snippet
+
+## The embed snippet
+
+A typical embed looks like this:
+
+```html
+<div id="fieldflow-directory"></div>
+<script src="https://app.getfieldflow.io/embed.js"></script>
+<script>
+  window.FieldFlow = window.FieldFlow || { q: [] };
+  window.FieldFlow.q.push({
+    projectId: "your-project-id",
+    apiKey: "ff_live_your_api_key",
+    container: "#fieldflow-directory",
+    apiBaseUrl: "https://app.getfieldflow.io",
+    options: {
+      showSearch: true,
+      showFilters: true,
+      itemsPerPage: 20
+    }
+  });
+</script>
+```
+
+## Embed options
+
+| Option | Default | Description |
+|---|---|---|
+| `projectId` | *(required)* | Your FieldFlow project UUID |
+| `apiKey` | *(required)* | API key from the Publish tab |
+| `container` | *(required)* | CSS selector for the HTML element to render into |
+| `apiBaseUrl` | *(required)* | Always `https://app.getfieldflow.io` |
+| `mode` | `"directory"` | `"directory"`, `"quiz"`, or `"quiz+directory"` |
+| `options.showSearch` | `true` | Show the search box |
+| `options.showFilters` | `true` | Show the filter sidebar |
+| `options.itemsPerPage` | `20` | Records per page |
+
+## Embed types
+
+### Directory only
+Shows the full searchable, filterable directory. This is the default.
+
+### Quiz only
+Shows the Quiz Flow without the directory. After completing the quiz, users see filtered results.
+
+### Quiz + Directory
+Shows the quiz first, then reveals the directory filtered by the user's answers. Users can also click "View Full Directory" to see everything.
+
+## Theme options
+
+- **System** — follows the visitor's device preference (light or dark mode)
+- **Light** — always light background
+- **Dark** — always dark background
+
+## Pre-filtering
+
+You can pre-select taxonomy filters in the embed code so the directory loads with specific categories already active. Enable this in the Publish tab under **Start with filters**.
+
+## Next steps
+
+Once you have your embed code, paste it into your website. See the platform-specific guides:
+
+- [WordPress](/embedding/wordpress/)
+- [Webflow](/embedding/webflow/)
+- [Squarespace](/embedding/squarespace/)
+- [Custom HTML](/embedding/custom-html/)

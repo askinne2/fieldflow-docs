@@ -1,0 +1,98 @@
+---
+title: Field Types Reference
+description: Every field type FieldFlow supports and when to use each one.
+---
+
+When mapping columns from your Google Sheet, you assign each column a field type. This tells FieldFlow how to display and format the data.
+
+## Available field types
+
+### Text
+The default type. Displays as plain text.
+
+**Use for:** Names, descriptions, notes, addresses, any freeform text.
+
+### URL
+Renders as a clickable link.
+
+**Use for:** Website URLs, social media links, application forms.
+
+**Example data:** `https://example.org/apply`
+
+### Image
+Displays as an image in the directory card and detail page.
+
+**Use for:** Logos, photos, headshots. The column should contain a direct URL to an image file (`.jpg`, `.png`, `.webp`).
+
+**Example data:** `https://example.org/images/logo.png`
+
+### Phone
+Formats as a clickable phone number (`tel:` link) on mobile devices.
+
+**Use for:** Phone numbers, fax numbers, hotlines.
+
+**Example data:** `(864) 555-0123`
+
+### Email
+Renders as a clickable `mailto:` link.
+
+**Use for:** Contact email addresses.
+
+**Example data:** `info@example.org`
+
+### Date
+Formats the value as a readable date.
+
+**Use for:** Event dates, deadlines, last-updated dates.
+
+**Example data:** `2026-03-15` or `March 15, 2026`
+
+### Number
+Formats as a number with optional currency or unit display.
+
+**Use for:** Prices, quantities, distances, ratings.
+
+### Coordinates
+Enables map view for this record. Expects latitude and longitude.
+
+**Use for:** Physical locations you want to show on a map.
+
+**Example data:** `34.8526, -82.3940` (lat, lng in a single column)
+
+### Taxonomy
+Marks this column as a filterable category. Values become filter options in the directory sidebar.
+
+**Use for:** Categories, service types, regions, tags — anything users should filter by.
+
+**Example data:** `Housing, Employment` (comma-separated values create multiple tags)
+
+:::tip
+Taxonomy fields are what power your directory's filter sidebar. If you want users to filter by "County" or "Service Type," map those columns as Taxonomy.
+:::
+
+### Hours
+Displays in a dedicated "Hours" card on detail pages.
+
+**Use for:** Operating hours, office hours, availability schedules.
+
+**Example data:** `Mon-Fri 9am-5pm, Sat 10am-2pm`
+
+### Rich Text
+Renders HTML formatting (bold, italic, links, lists).
+
+**Use for:** Long descriptions with formatting. FieldFlow sanitizes the HTML for security.
+
+## Choosing the right type
+
+| Your data looks like... | Use this type |
+|---|---|
+| Names, descriptions, addresses | Text |
+| `https://...` links | URL |
+| `https://...png` or `.jpg` image links | Image |
+| Phone numbers | Phone |
+| Email addresses | Email |
+| Dates | Date |
+| Lat/lng coordinates | Coordinates |
+| Categories or tags (comma-separated) | Taxonomy |
+| Operating hours | Hours |
+| Formatted text with HTML | Rich Text |

@@ -1,0 +1,92 @@
+---
+title: WordPress
+description: Step-by-step guide to embedding a FieldFlow directory on a WordPress site.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+FieldFlow works on any WordPress site — whether you're using the block editor (Gutenberg), Elementor, or the classic editor.
+
+## Block Editor (Gutenberg)
+
+<Steps>
+
+1. **Get your embed code** from the [Publish tab](/publishing/embed-code/) in FieldFlow
+
+2. **Open the WordPress page** where you want the directory to appear
+
+3. **Add a Custom HTML block**
+   - Click the **+** button to add a block
+   - Search for "Custom HTML"
+   - Select it
+
+4. **Paste the embed code** into the Custom HTML block
+
+5. **Publish or update** the page
+
+</Steps>
+
+Your directory should now appear on the page.
+
+## Elementor
+
+<Steps>
+
+1. **Get your embed code** from the [Publish tab](/publishing/embed-code/)
+
+2. **Open the page in Elementor**
+
+3. **Add an HTML widget**
+   - Search for "HTML" in the widget panel
+   - Drag it to your page
+
+4. **Paste the embed code** into the HTML widget's content area
+
+5. **Click Update** to save
+
+</Steps>
+
+:::tip
+In Elementor, the directory won't render in the visual editor — you'll see the raw HTML. Click **Preview** or view the published page to see the live directory.
+:::
+
+## Classic Editor
+
+<Steps>
+
+1. **Get your embed code** from the [Publish tab](/publishing/embed-code/)
+
+2. **Open the page** in the WordPress classic editor
+
+3. **Switch to the "Text" tab** (not "Visual")
+
+4. **Paste the embed code** where you want the directory to appear
+
+5. **Publish or update** the page
+
+</Steps>
+
+:::caution
+If you paste the embed code in the "Visual" tab, WordPress may strip or reformat the `<script>` tags. Always use the "Text" tab.
+:::
+
+## Troubleshooting
+
+**Directory not showing:**
+- Make sure your API key is valid and not revoked
+- Check that the allowed origins on your API key include your WordPress site's domain
+- View the browser console (F12 > Console) for error messages
+
+**"Failed to fetch" error:**
+- Your API key's domain whitelist may not include this site's URL
+- Check that `apiBaseUrl` is set to `https://app.getfieldflow.io`
+
+**Directory appears briefly then disappears:**
+- A WordPress plugin may be conflicting with the embed script
+- Try disabling caching plugins temporarily to test
+- Check if a security plugin is blocking external scripts
+
+**Styling looks off:**
+- Some WordPress themes apply aggressive CSS that overrides the embed
+- FieldFlow's embed uses scoped styles to minimize conflicts, but heavy theme CSS may still interfere
+- Try adding the embed to a full-width page template

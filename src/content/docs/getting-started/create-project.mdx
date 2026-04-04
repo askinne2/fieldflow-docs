@@ -1,0 +1,41 @@
+---
+title: Create a Project
+description: Set up your first FieldFlow project by connecting it to a Google Sheet.
+---
+
+A project in FieldFlow represents one directory. Each project connects to one Google Sheet and has its own layout, filters, and embed code.
+
+## Create a new project
+
+1. Click **Create Project** in the sidebar (or from the dashboard)
+2. Fill in the form:
+
+| Field | Required | Description |
+|---|---|---|
+| **Organization** | Yes | Which team or account owns this project |
+| **Project Name** | Yes | A name for your directory (e.g., "Resource Directory") |
+| **Description** | No | A short note for your team |
+| **Google Sheet ID** | Yes | The ID from your spreadsheet URL ([how to find it](/getting-started/connect-google-sheets/#finding-your-google-sheet-id)) |
+| **Worksheet Name** | No | Defaults to "Sheet1". Change this if your data is on a different tab |
+
+3. Click **Create Project**
+
+You'll be taken to the project's **Overview** tab where you can start configuring your directory.
+
+## What happens next
+
+After creating your project, you'll want to:
+
+1. **Sync your data** — Pull the rows from your Google Sheet into FieldFlow
+2. **Map your fields** — Tell FieldFlow what each column represents
+3. **Customize the layout** — Choose how cards look in the directory
+
+## How your spreadsheet should be structured
+
+FieldFlow works best when your Google Sheet is a flat table:
+
+- **Row 1** should contain column headers (e.g., Name, Phone, Address, Category)
+- **Each row below** is one record in your directory
+- Avoid merged cells, nested tables, or multiple header rows
+
+**Next:** [Your First Sync →](/getting-started/first-sync/)

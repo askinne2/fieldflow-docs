@@ -1,0 +1,46 @@
+---
+title: Connect Google Sheets
+description: Link your Google account so FieldFlow can read your spreadsheet data.
+---
+
+FieldFlow reads data directly from Google Sheets using a secure OAuth connection. Your data stays in Google — FieldFlow just reads it.
+
+## Connect your Google account
+
+1. Open any project's **Overview** tab (or create a new project first)
+2. In the **Google Sheets Connection** section, click **Connect Google Account**
+3. A Google sign-in window will appear — choose the Google account that owns or has access to your spreadsheets
+4. Grant FieldFlow permission to read your spreadsheets
+5. You'll be redirected back to FieldFlow with a green **Connected** badge
+
+## Finding your Google Sheet ID
+
+Every Google Sheet has a unique ID in its URL. You'll need this when creating a project.
+
+Open your Google Sheet in the browser. The URL looks like:
+
+```
+https://docs.google.com/spreadsheets/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ/edit
+```
+
+The Sheet ID is the long string between `/d/` and `/edit`:
+
+```
+1aBcDeFgHiJkLmNoPqRsTuVwXyZ
+```
+
+Copy this value — you'll paste it when creating your project.
+
+## Worksheet name
+
+If your spreadsheet has multiple tabs (worksheets), FieldFlow reads from **Sheet1** by default. You can specify a different worksheet name when creating your project.
+
+## What permissions does FieldFlow need?
+
+FieldFlow requests **read-only** access to Google Sheets. It cannot modify, delete, or create spreadsheets. Your data stays in Google Sheets — FieldFlow reads it and creates a searchable copy for your directory.
+
+## Disconnecting
+
+To disconnect your Google account, go to the project **Overview** tab and click **Disconnect** in the Google Sheets Connection section.
+
+**Next:** [Create a Project →](/getting-started/create-project/)
