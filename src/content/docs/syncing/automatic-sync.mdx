@@ -3,4 +3,51 @@ title: Automatic Sync
 description: Schedule regular data updates from your spreadsheet.
 ---
 
-Content coming soon.
+Automatic sync keeps your directory up to date without manual intervention. Set a schedule and FieldFlow will pull fresh data from your Google Sheet at regular intervals.
+
+## Set up automatic sync
+
+1. Go to your project's **Sync** tab
+2. Toggle **Automatic Sync** to on
+3. Choose an interval:
+
+| Interval | Best for |
+|---|---|
+| **Every 30 minutes** | Data that changes frequently throughout the day |
+| **Every hour** | Active directories with regular updates |
+| **Every 6 hours** | Directories updated a few times per day |
+| **Every 12 hours** | Directories updated once or twice daily |
+| **Every 24 hours** | Directories updated daily or less |
+
+4. Click **Save**
+
+## How it works
+
+- FieldFlow checks the time since your last successful sync
+- When the interval has elapsed, it automatically queues a sync job
+- The sync runs in the background on the FieldFlow worker
+- If the sync fails, it retries up to 3 times
+- You'll receive an email notification if all retries fail (if email notifications are enabled)
+
+## Requirements
+
+Automatic sync requires:
+- A connected Google account
+- A valid project with at least one successful manual sync
+
+## Monitoring
+
+Check the **Sync** tab anytime to see:
+- When the next automatic sync is scheduled
+- History of recent automatic syncs (marked as "Scheduled" type)
+- Any failures or warnings
+
+## Email notifications
+
+In **Account Settings > Notifications**, you can enable:
+- **Sync failure alerts** — get emailed when a sync fails after all retries
+- These are per-user, not per-project
+
+## Costs
+
+Automatic sync is available on all paid plans. The sync interval options are the same across all plans.

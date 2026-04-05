@@ -3,4 +3,50 @@ title: Sync History
 description: Monitor sync status, troubleshoot failures, and review logs.
 ---
 
-Content coming soon.
+The Sync tab shows a history of all syncs for your project — both manual and automatic.
+
+## Reading the sync log
+
+Each entry shows:
+
+| Column | Description |
+|---|---|
+| **Time** | When the sync started and completed |
+| **Status** | Completed, Failed, Processing, or Queued |
+| **Type** | Manual (you clicked Sync Now) or Scheduled (automatic) |
+| **Records** | Total processed, with breakdown of created/updated/deleted |
+| **Warnings** | Row limit reached, missing fields, or other notes |
+
+## Status meanings
+
+| Status | What it means |
+|---|---|
+| **Completed** | Sync finished successfully |
+| **Processing** | Sync is currently running |
+| **Queued** | Sync is waiting to run (another sync may be in progress) |
+| **Failed** | Sync encountered an error |
+
+## Troubleshooting failed syncs
+
+### "Google authentication expired"
+Your Google connection needs to be refreshed. Go to the **Overview** tab, disconnect, and reconnect your Google account.
+
+### "Sheet not found"
+The Google Sheet ID in your project settings may be wrong, or the sheet was deleted/moved. Verify the Sheet ID and worksheet name.
+
+### "Row limit exceeded"
+Your plan has a maximum number of rows. The sync processed up to your limit and stopped. Upgrade your plan or reduce rows in your spreadsheet.
+
+### "Rate limit exceeded"
+Too many syncs in a short period. Wait a few minutes and try again.
+
+### General failures
+Check that:
+- Your Google account is still connected
+- The spreadsheet still exists and is accessible
+- The worksheet name matches a tab in the spreadsheet
+- Your internet connection is stable
+
+## Sync log retention
+
+FieldFlow keeps the 10 most recent sync entries per project. Older entries are automatically removed.

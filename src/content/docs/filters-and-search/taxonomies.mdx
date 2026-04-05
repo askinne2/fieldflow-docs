@@ -3,4 +3,53 @@ title: Taxonomies
 description: Create filterable categories for your directory.
 ---
 
-Content coming soon.
+Taxonomies are the categories visitors use to filter your directory. When someone selects "Housing" or "Food Assistance" in the sidebar, that is a taxonomy filter.
+
+## How taxonomies connect to your data
+
+Each taxonomy maps to a column in your Google Sheet set as the **Taxonomy** field type.
+
+| Sheet Column | Taxonomy Name | Example Values |
+|---|---|---|
+| Service Type | Service Type | Housing, Food, Legal Aid, Employment |
+| County | County | Greenville, Spartanburg, Anderson |
+| Language | Language | English, Spanish, Vietnamese |
+
+## Create a taxonomy
+
+1. Go to **Configure > Filters & Sorting**
+2. Click **Add Taxonomy**
+3. Set:
+   - **Name** — the taxonomy identifier
+   - **Label** — what visitors see in the filter sidebar
+   - **Display type** — how the filter options appear
+
+## Display types
+
+| Type | Best for | How it looks |
+|---|---|---|
+| **Dropdown** | Long lists (10+ options) | Select menu |
+| **Checkboxes** | Medium lists (3-10 options) | Checkboxes, allows multiple selections |
+| **Buttons** | Short lists (2-5 options) | Clickable pills/chips |
+
+## Adding terms
+
+Terms are the individual values within a taxonomy. You can auto-populate from your data, add manually, or assign colors to specific terms.
+
+## Multiple values per record
+
+Separate values with commas in your Google Sheet:
+
+```
+Housing, Employment, Legal Aid
+```
+
+FieldFlow splits these into individual filter terms automatically.
+
+## How filtering works for visitors
+
+- Selecting a term shows only matching records
+- Multiple terms within one taxonomy: records matching **any** selected term
+- Terms across different taxonomies: records matching **all** selected taxonomies
+- Active filters appear as removable chips above results
+- "Clear all" button resets everything

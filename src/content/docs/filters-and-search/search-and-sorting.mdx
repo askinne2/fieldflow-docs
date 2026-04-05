@@ -1,6 +1,48 @@
 ---
 title: Search & Sorting
-description: Configure full-text search and sort options.
+description: Configure full-text search and sort options for your directory.
 ---
 
-Content coming soon.
+## Search
+
+Full-text search is enabled by default. Visitors type in the search box and results filter in real time as they type.
+
+### How search works
+
+- Debounced — waits until the visitor stops typing before filtering
+- Searches across all visible text fields
+- Works alongside taxonomy filters — search within filtered results
+
+### Showing or hiding search
+
+Control the search box in your [embed code](/publishing/embed-code/):
+
+```js
+options: { showSearch: true }  // or false to hide
+```
+
+## Sorting
+
+Sorting lets visitors reorder results by different fields.
+
+### Configure sort options
+
+In **Configure > Filters & Sorting**:
+
+1. **Set a default sort** — how records load initially
+2. **Add sort options** — visitor-facing dropdown in the toolbar
+
+Each sort option has a **field** (Name, Date, etc.) and **direction** (A-Z or Z-A).
+
+### Hide the sort dropdown
+
+If you want a fixed sort order, hide the dropdown. Records still sort by your default.
+
+## Pagination
+
+Results are paginated. Visitors can:
+- Navigate with Previous/Next buttons
+- See total count ("Showing 1-20 of 150")
+- Change items per page (12, 20, 24, 48, or 96)
+
+Default items per page is set in your [embed code](/publishing/embed-code/) with `options.itemsPerPage`.

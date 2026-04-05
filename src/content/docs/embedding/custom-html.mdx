@@ -3,4 +3,87 @@ title: Custom HTML
 description: Embed a FieldFlow directory on any HTML page.
 ---
 
-Content coming soon.
+FieldFlow works on any website that supports HTML. If your platform isn't WordPress, Webflow, or Squarespace, you can still embed a directory.
+
+## Basic setup
+
+Add this to your HTML page wherever you want the directory to appear:
+
+```html
+<!-- Container element -->
+<div id="fieldflow-directory"></div>
+
+<!-- FieldFlow embed script -->
+<script src="https://app.getfieldflow.io/embed.js"></script>
+
+<!-- Initialize -->
+<script>
+  window.FieldFlow = window.FieldFlow || { q: [] };
+  window.FieldFlow.q.push({
+    projectId: "YOUR_PROJECT_ID",
+    apiKey: "YOUR_API_KEY",
+    container: "#fieldflow-directory",
+    apiBaseUrl: "https://app.getfieldflow.io",
+    options: {
+      showSearch: true,
+      showFilters: true,
+      itemsPerPage: 20
+    }
+  });
+</script>
+```
+
+Replace `YOUR_PROJECT_ID` and `YOUR_API_KEY` with values from your project's **Publish** tab.
+
+## Placement
+
+- The `<div>` can go anywhere in your page's `<body>`
+- The `<script>` tags should come after the `<div>`, ideally before `</body>`
+- Give the container enough space — FieldFlow needs at least 300px of height
+
+## Styling the container
+
+You can style the container element with CSS:
+
+```html
+<div id="fieldflow-directory" style="max-width: 1200px; margin: 0 auto; min-height: 500px;"></div>
+```
+
+FieldFlow's styles are scoped to avoid conflicts with your page's CSS.
+
+## Multiple directories on one page
+
+You can embed multiple FieldFlow directories on the same page. Use different container IDs:
+
+```html
+<div id="directory-a"></div>
+<div id="directory-b"></div>
+
+<script src="https://app.getfieldflow.io/embed.js"></script>
+<script>
+  window.FieldFlow = window.FieldFlow || { q: [] };
+  window.FieldFlow.q.push({
+    projectId: "PROJECT_A_ID",
+    apiKey: "KEY_A",
+    container: "#directory-a",
+    apiBaseUrl: "https://app.getfieldflow.io"
+  });
+  window.FieldFlow.q.push({
+    projectId: "PROJECT_B_ID",
+    apiKey: "KEY_B",
+    container: "#directory-b",
+    apiBaseUrl: "https://app.getfieldflow.io"
+  });
+</script>
+```
+
+## Platforms this works with
+
+This approach works on any platform that lets you add custom HTML:
+- Static HTML sites
+- Ghost
+- HubSpot
+- Wix (via HTML embed widget)
+- Shopify (via custom Liquid sections)
+- Notion (via embed blocks — limited)
+- Any CMS with an HTML/code block

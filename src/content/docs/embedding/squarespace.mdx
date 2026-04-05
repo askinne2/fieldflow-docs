@@ -3,4 +3,35 @@ title: Squarespace
 description: Embed a FieldFlow directory on a Squarespace site.
 ---
 
-Content coming soon.
+import { Steps } from '@astrojs/starlight/components';
+
+## Add FieldFlow to a Squarespace page
+
+<Steps>
+
+1. **Get your embed code** from the [Publish tab](/publishing/embed-code/) in FieldFlow
+
+2. **Open your Squarespace page** in the editor
+
+3. **Add a Code Block**
+   - Click the **+** button to add a new block
+   - Select **Code** under "More"
+   - Or search for "Code" in the block picker
+
+4. **Paste the embed code** into the code block
+
+5. **Uncheck "Display Source"** — this prevents Squarespace from showing the raw HTML
+
+6. **Save and publish** the page
+
+</Steps>
+
+## Important notes
+
+- Squarespace Business plan or higher is required for custom code injection
+- The directory won't render in the Squarespace editor — preview or publish to see it
+- Add your Squarespace domain to your API key's allowed origins
+
+## Site-wide embed
+
+If you want the directory on a dedicated page, the Code Block approach above is best. If you need FieldFlow on multiple pages, consider using Squarespace's **Code Injection** (Settings > Advanced > Code Injection) to load the embed script globally, then place individual `<div>` elements on each page.

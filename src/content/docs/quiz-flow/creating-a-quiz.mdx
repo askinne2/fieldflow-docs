@@ -3,4 +3,63 @@ title: Creating a Quiz
 description: Build questions and answer options for your quiz.
 ---
 
-Content coming soon.
+## Open the quiz builder
+
+1. Go to your project's **Configure > Quiz** tab
+2. Click **Create Quiz** (or edit an existing one)
+
+## Quiz structure
+
+A quiz consists of:
+
+### Title and subtitle
+Displayed at the top of the quiz. Keep it clear and action-oriented:
+- Good: "Find the right resources for you"
+- Avoid: "Resource Finder Quiz Assessment Tool"
+
+### Questions
+Each question has:
+- **Question text** — what the visitor sees
+- **Answer options** — clickable choices (buttons)
+- **Tags** — keywords attached to each answer option (used for matching)
+
+### Example question
+
+> **What type of support are you looking for?**
+>
+> - Housing assistance → tags: `housing`, `shelter`
+> - Food & nutrition → tags: `food`, `nutrition`, `pantry`
+> - Employment help → tags: `jobs`, `employment`, `career`
+> - Legal services → tags: `legal`, `attorney`, `rights`
+
+## Adding questions
+
+1. Click **Add Question**
+2. Type the question text
+3. Add answer options — each option gets a label and one or more tags
+4. Repeat for additional questions
+
+## Tips for writing good questions
+
+- **Keep it short** — 3-5 questions max. More than that and visitors drop off
+- **Use plain language** — avoid jargon your audience might not know
+- **Make options clear** — each option should be distinct, not overlapping
+- **Cover common needs** — think about the top 5-6 reasons people visit your directory
+- **Include a catch-all** — add an option like "I'm not sure" or "Something else" that doesn't filter too narrowly
+
+## AI-powered quiz generation
+
+If you provide an **AI Context** description in your project's Overview tab, FieldFlow can generate a complete quiz structure for you. Describe your directory and audience, and the AI creates questions, options, and tags that match your data.
+
+## Activating the quiz
+
+After creating your quiz:
+1. Toggle the quiz to **Active** in the quiz builder
+2. The quiz URL appears in the **Publish** tab
+3. Update your embed code to use `mode: "quiz"` or `mode: "quiz+directory"`
+
+## Next step
+
+After creating questions, you need to connect the answer tags to your directory's taxonomy terms.
+
+**Next:** [Tag Mapping →](/quiz-flow/tag-mapping/)

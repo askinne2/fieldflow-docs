@@ -3,4 +3,54 @@ title: Tag Mapping
 description: How quiz answers connect to directory results.
 ---
 
-Content coming soon.
+Tag mapping is the bridge between quiz answers and directory results. It tells FieldFlow which taxonomy terms correspond to which answer tags.
+
+## How it works
+
+1. Each quiz answer option has **tags** (keywords you assigned when creating the quiz)
+2. Your directory has **taxonomies** with **terms** (categories you set up in Filters)
+3. Tag mapping connects tags → taxonomy terms
+
+When a visitor picks an answer, FieldFlow collects the tags from their selections and finds the matching taxonomy terms to filter the directory.
+
+## Automatic AI mapping
+
+When you activate a quiz, FieldFlow's AI automatically maps your answer tags to taxonomy terms. It reads:
+- Your quiz questions and answer tags
+- Your directory's taxonomy terms
+- The AI Context from your project's Overview tab
+
+The AI creates a mapping table. You can review and adjust it before going live.
+
+## Manual mapping
+
+You can also create or edit mappings manually:
+
+1. Go to **Configure > Quiz**
+2. Open the **Tag Mapping** section
+3. For each answer tag, select which taxonomy term(s) it should map to
+
+### Example mapping
+
+| Answer Tag | Maps To |
+|---|---|
+| `housing` | Service Type: Housing |
+| `shelter` | Service Type: Housing, Service Type: Emergency Shelter |
+| `food` | Service Type: Food Assistance |
+| `greenville` | County: Greenville |
+
+## How results are scored
+
+When a visitor completes the quiz:
+1. All their answer tags are collected
+2. Each tag is mapped to taxonomy terms
+3. Records matching those terms are shown, ranked by how many tags they match
+4. Records matching the most tags appear first
+
+## Tips
+
+- Tags should be specific enough to differentiate but broad enough to match multiple records
+- Use the AI mapping as a starting point, then review for accuracy
+- Test the quiz yourself to make sure results feel relevant
+- If results are too narrow, broaden your tag-to-term mappings
+- If results are too broad, add more specific tags to your answer options

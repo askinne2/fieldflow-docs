@@ -3,4 +3,42 @@ title: Manual Sync
 description: Pull the latest data from your Google Sheet on demand.
 ---
 
-Content coming soon.
+Manual sync lets you update your directory whenever you want by clicking a button.
+
+## Run a manual sync
+
+1. Go to your project's **Sync** tab
+2. Click **Sync Now**
+3. Watch the progress indicator
+
+When complete, you'll see a summary:
+- Records processed
+- Records created (new rows)
+- Records updated (changed rows)
+- Records deleted (removed rows)
+
+## When to sync manually
+
+- After making changes to your Google Sheet
+- When setting up a new project for the first time
+- When troubleshooting data issues
+- Anytime you want to verify your directory is current
+
+## What happens during a sync
+
+1. FieldFlow reads all rows from your Google Sheet
+2. Compares them against the existing directory data
+3. Creates new records for new rows
+4. Updates records where data has changed
+5. Removes records for deleted rows
+6. Updates the "Last synced" timestamp
+
+Your Google Sheet is never modified — FieldFlow only reads from it.
+
+## Sync while working
+
+You can continue using the FieldFlow dashboard while a sync runs. The sync happens in the background. The page auto-refreshes the status every second so you can watch progress.
+
+## After syncing
+
+If you've added new columns to your Sheet, go to **Configure > Fields** to map them. New columns won't appear in your directory until they're mapped to a field type.

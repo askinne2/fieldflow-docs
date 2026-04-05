@@ -3,4 +3,38 @@ title: Webflow
 description: Embed a FieldFlow directory on a Webflow site.
 ---
 
-Content coming soon.
+import { Steps } from '@astrojs/starlight/components';
+
+## Add FieldFlow to a Webflow page
+
+<Steps>
+
+1. **Get your embed code** from the [Publish tab](/publishing/embed-code/) in FieldFlow
+
+2. **Open your Webflow project** in the Designer
+
+3. **Add an Embed element**
+   - In the left panel, search for "Embed" under Components
+   - Drag it onto your page where you want the directory
+
+4. **Paste the embed code** into the Embed element's code editor
+
+5. **Publish your site** (the embed won't render in the Webflow Designer preview — you need to publish to see it live)
+
+</Steps>
+
+## Tips
+
+- The embed won't show in the Webflow Designer — this is normal. Publish or preview the live site to see it
+- Use a full-width section for the best directory layout
+- Make sure the embed element has enough height (at least 500px recommended)
+- Set your API key's allowed origins to include your Webflow domain (both `yoursite.webflow.io` and your custom domain if you have one)
+
+## Custom domain
+
+If your Webflow site uses a custom domain, add both domains to your API key's allowed origins:
+
+```
+https://yoursite.webflow.io
+https://www.yourdomain.com
+```

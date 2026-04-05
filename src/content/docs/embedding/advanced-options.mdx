@@ -3,4 +3,70 @@ title: Advanced Embed Options
 description: Detail URL templates, pre-filtering, and other advanced embed configuration.
 ---
 
-Content coming soon.
+Beyond the basic embed options, FieldFlow supports advanced configuration for custom integrations.
+
+## Detail URL template
+
+By default, clicking a card opens the detail view within the embed. If you want detail pages to open on your own site instead, use `detailUrlTemplate`:
+
+```js
+window.FieldFlow.q.push({
+  projectId: "...",
+  apiKey: "...",
+  container: "#fieldflow-directory",
+  apiBaseUrl: "https://app.getfieldflow.io",
+  detailUrlTemplate: "https://mysite.com/resources/{{externalId}}"
+});
+```
+
+`{{externalId}}` is replaced with the record's ID. This is useful when you have dedicated pages for each resource on your own site.
+
+## Open a specific record on load
+
+Use `openRecordId` to load the embed with a specific record's detail view already open:
+
+```js
+window.FieldFlow.q.push({
+  projectId: "...",
+  apiKey: "...",
+  container: "#fieldflow-directory",
+  apiBaseUrl: "https://app.getfieldflow.io",
+  openRecordId: "record-uuid-here"
+});
+```
+
+This is useful for deep linking — for example, when a WordPress page should show a specific resource.
+
+## Pre-filtering
+
+You can pre-select taxonomy filters so the directory loads with specific categories already active. Configure this in the **Publish** tab under **Start with filters**, or pass filter parameters in the embed config.
+
+## Embed modes
+
+| Mode | Value | Description |
+|---|---|---|
+| Directory only | `"directory"` | Standard directory with search and filters (default) |
+| Quiz only | `"quiz"` | Shows quiz, then filtered results |
+| Quiz + Directory | `"quiz+directory"` | Quiz first, then full directory with results highlighted |
+
+```js
+window.FieldFlow.q.push({
+  // ...
+  mode: "quiz+directory"
+});
+```
+
+## All configuration options
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `projectId` | string | required | Your project UUID |
+| `apiKey` | string | required | API key from Publish tab |
+| `container` | string | required | CSS selector for mount element |
+| `apiBaseUrl` | string | required | `https://app.getfieldflow.io` |
+| `mode` | string | `"directory"` | `"directory"`, `"quiz"`, or `"quiz+directory"` |
+| `detailUrlTemplate` | string | — | Custom URL for detail pages |
+| `openRecordId` | string | — | Open specific record on load |
+| `options.showSearch` | boolean | `true` | Show search box |
+| `options.showFilters` | boolean | `true` | Show filter sidebar |
+| `options.itemsPerPage` | number | `20` | Records per page |

@@ -3,4 +3,54 @@ title: Detail Pages
 description: Enable individual record pages with contact info, maps, and hours.
 ---
 
-Content coming soon.
+Detail pages give each record in your directory its own full page. When a visitor clicks a card, they see all the information for that resource — contact details, location map, hours, and more.
+
+## Enable detail pages
+
+1. Go to your project's **Overview** tab
+2. Toggle **Detail Pages** to on
+3. Click **Save**
+
+Once enabled, each card in your directory gets a "View Details" link that opens the full record page.
+
+## What detail pages include
+
+Detail pages automatically organize your data into sections:
+
+### Hero section
+The record title, taxonomy tags as colored pills, and primary contact actions (website button, phone link, email link).
+
+### Content sections
+Your mapped fields displayed with labels. If you've configured sections in the layout builder, fields are grouped accordingly.
+
+### Contact information card
+FieldFlow auto-detects contact fields (phone, email, URL, address) and groups them into a sidebar card with click-to-action links.
+
+### Map card
+If your record has a **Coordinates** field, a map card appears with the location and an "Open in Google Maps" button.
+
+### Hours card
+If your record has an **Hours** field, a dedicated card shows operating hours with a clock icon.
+
+## Configuring detail page layout
+
+Go to **Configure > Detail Page** to customize:
+
+- **Show/hide sections** — group fields into named sections
+- **Section ordering** — drag to reorder
+- **Field visibility** — choose which fields appear on the detail page vs. only on cards
+
+## Detail page URLs
+
+Each record gets a shareable URL like:
+
+```
+https://app.getfieldflow.io/p/[projectId]/[recordId]
+```
+
+## Navigation
+
+Detail pages include:
+- **Back button** — returns to the directory (preserving any active filters)
+- **Share button** — copies the URL or opens the native share dialog
+- **Print button** — opens a print-friendly view
