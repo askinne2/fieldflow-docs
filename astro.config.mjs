@@ -8,7 +8,10 @@ export default defineConfig({
 		starlight({
 			title: 'FieldFlow Docs',
 			logo: {
-				src: './src/assets/fieldflow-logo.svg',
+				/* dark = image when docs are in dark mode; light = when in light mode */
+				dark: './src/assets/fieldflow-logo-dark-nav.svg',
+				light: './src/assets/fieldflow-logo.svg',
+				alt: 'FieldFlow',
 				replacesTitle: true,
 			},
 			social: [
