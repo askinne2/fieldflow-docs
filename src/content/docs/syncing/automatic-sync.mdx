@@ -1,53 +1,45 @@
 ---
 title: Automatic Sync
-description: Schedule regular data updates from your spreadsheet.
+description: Keep your directory up to date on a schedule.
 ---
 
-Automatic sync keeps your directory up to date without manual intervention. Set a schedule and FieldFlow will pull fresh data from your Google Sheet at regular intervals.
+Automatic sync pulls fresh data from your Google Sheet on a schedule, so you don't have to remember to sync.
 
 ## Set up automatic sync
 
 1. Go to your project's **Sync** tab
-2. Toggle **Automatic Sync** to on
-3. Choose an interval:
+2. In the **Automatic sync** box, check **Enable automatic sync**
+3. Choose an **Interval**:
 
-| Interval | Best for |
+| Interval | Good for |
 |---|---|
-| **Every 30 minutes** | Data that changes frequently throughout the day |
+| **Every 30 minutes** | Data that changes often during the day |
 | **Every hour** | Active directories with regular updates |
-| **Every 6 hours** | Directories updated a few times per day |
-| **Every 12 hours** | Directories updated once or twice daily |
+| **Every 6 hours** | Directories updated a few times a day |
+| **Every 12 hours** | Directories updated once or twice a day (default) |
 | **Every 24 hours** | Directories updated daily or less |
 
-4. Click **Save**
+4. Click **Save schedule**
 
 ## How it works
 
-- FieldFlow checks the time since your last successful sync
-- When the interval has elapsed, it automatically queues a sync job
-- The sync runs in the background on the FieldFlow worker
-- If the sync fails, it retries up to 3 times
-- You'll receive an email notification if all retries fail (if email notifications are enabled)
+- FieldFlow checks every 5 minutes for projects that are due
+- A project is due when your chosen interval has passed since its last successful sync
+- The sync runs in the background, the same way a manual sync does
+- If a sync fails, FieldFlow retries it up to 3 times
+- If all tries fail, an email goes out (see below)
 
 ## Requirements
 
-Automatic sync requires:
-- A connected Google account
-- A valid project with at least one successful manual sync
+- Google Sheets must be connected for your organization
+- Your field mapping should be saved in **Configure** > **Fields**
 
-## Monitoring
+## Checking on automatic syncs
 
-Check the **Sync** tab anytime to see:
-- When the next automatic sync is scheduled
-- History of recent automatic syncs (marked as "Scheduled" type)
-- Any failures or warnings
+The **Recent syncs** list on the Sync tab marks each sync as **Manual** or **Scheduled**.
 
-## Email notifications
+## Failure emails
 
-In **Account Settings > Notifications**, you can enable:
-- **Sync failure alerts** — get emailed when a sync fails after all retries
-- These are per-user, not per-project
+Automatic syncs run on behalf of the person who connected Google Sheets for your organization. If that person has left, they run on behalf of the Owner.
 
-## Costs
-
-Automatic sync is available on all paid plans. The sync interval options are the same across all plans.
+That person gets an email when a sync fails after all retries, as long as **Email on sync failures** is on in their [Preferences](/billing/settings/#notifications).

@@ -1,52 +1,58 @@
 ---
 title: Card Layouts
-description: Customize how directory records appear using the visual layout builder.
+description: Choose which fields appear on directory cards and how the cards look.
 ---
 
-The layout builder lets you design how each record looks in your directory — no coding required. You pick the card style, choose which fields to show, and see a live preview as you go.
+The layout builder controls what each record looks like in your directory. You choose the fields, their order, and the styling, and see a live preview as you go.
 
 ## Open the layout builder
 
-Go to your project's **Configure > Display** tab.
+Go to your project's **Configure** > **Display** tab.
 
-## Card styles
+## Card title
 
-FieldFlow offers three card variants:
+Pick the field to use as the **card title**. It's the main heading on each card and is what the **Name: A–Z** sort uses. It isn't repeated in the card body.
 
-### Modern (default)
-Larger cards with prominent images and generous spacing. Best for directories where visual appeal matters — resource directories, business listings, program catalogs.
+## Choose and order fields
 
-### Compact
-Smaller, denser cards that show more records on screen. Best for long lists where users want to scan quickly — staff directories, job boards, event calendars.
+The **Fields** list shows the fields from **Configure** > **Fields**.
 
-### Detailed
-Full-width cards with extra field visibility. Best when each record has lots of metadata — service directories with hours, eligibility, contact info, and descriptions.
+- **Show or hide** a field with the eye button
+- **Reorder** fields by dragging them
+- **Custom link text**: for URL, email, and phone fields, you can enter text such as "Visit Website" or "Call Now" to show instead of the raw link. It's used on cards and detail pages
 
-## Choosing which fields to display
+If you added or enabled columns in **Configure** > **Fields** and they don't show up here, click **Reset to default** in the **Layout Tips** box. This rebuilds the field list from your current field mapping.
 
-Not every field needs to show on the card. In the layout builder:
+## Customize
 
-1. **Title field** — the main heading on each card (usually "Name" or "Organization")
-2. **Subtitle** — a secondary line (optional)
-3. **Description** — a longer text field shown below the title
-4. **Image** — displayed as the card's hero image or thumbnail
-5. **Additional fields** — toggle any mapped field on or off
+The **Customize** panel has these sections:
 
-Users can also show/hide optional fields themselves using the **field visibility menu** in the directory toolbar.
+| Section | What you can change |
+|---|---|
+| **Quick Start** | Apply a Modern, Classic, or Compact style preset |
+| **Layout** | Grid columns (1 to 4) and card corner radius |
+| **Header** | Flat color or gradient, header colors, and header text color |
+| **Card Surface** | Card background and border colors |
+| **Buttons** | Primary color, button text color, and pill color |
+| **Text** | Label and body text colors, and title, label, and body text sizes |
+| **Display** | Show field labels, show the action button, and the button label |
 
-## Colors and styling
+The **action button** (for example, "View Details") links to each record's detail page. It only appears when detail pages are turned on in the **Overview** tab. See [Detail Pages](/display/detail-pages/).
 
-You can customize:
-- **Primary color** — used for links, buttons, and accents
-- **Card borders and shadows** — subtle or prominent
-- **Header style** — gradient or flat
-
-For more detail, see [Colors & Branding](/display/colors-and-branding/).
+For more on colors, see [Colors & Branding](/display/colors-and-branding/).
 
 ## Live preview
 
-Changes update in real-time in the preview panel. What you see is what your visitors will see in the embedded directory.
+The **Live Preview** updates as you make changes.
 
-## Saving
+## Save
 
-Click **Save** to apply your layout changes. The next time someone loads your directory (or refreshes), they'll see the updated design.
+Click **Save layout**. Visitors see the new design the next time they load or refresh the directory.
+
+## What visitors can change
+
+Visitors can adjust their own view from the directory toolbar. Their choices are remembered in their browser and don't change your settings:
+
+- **Card style**: Modern (the default), Compact, or Detailed
+- **Fields**: show or hide optional fields
+- **List or Map**, when [map view](/display/map-view/) is on

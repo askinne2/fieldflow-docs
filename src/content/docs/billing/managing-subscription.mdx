@@ -1,46 +1,50 @@
 ---
 title: Managing Your Subscription
-description: Upgrade, downgrade, cancel, or update payment info.
+description: Start a trial, change plans, update payment info, or cancel.
 ---
+
+Billing is per organization. Only the organization's **Owner** and **Admins** can manage the subscription. Editors and Viewers see the current plan but can't change it.
 
 ## View your current plan
 
-Go to **Billing** in the left sidebar. You'll see:
-- Your current plan name
-- Subscription status (active, trialing, canceled)
-- Current billing period end date
+Go to **Billing** in the left sidebar (under **Organization**). You'll see:
+- Your current plan
+- Subscription status, such as `trialing` or `active`
+- When the current billing period ends
 
-## Upgrade your plan
+If you belong to more than one organization, pick one from the **Organization** menu at the top of the page.
+
+## Start a trial or upgrade
 
 1. Go to **Billing**
-2. Click **Upgrade Plan**
-3. Select the plan you want
-4. Choose monthly or annual billing
-5. Complete checkout via Stripe
+2. Click **Upgrade plan**
+3. Pick a plan and click its button
 
-Annual billing saves roughly 20% compared to monthly.
+If you don't have a subscription yet, you'll go to Stripe checkout. New subscriptions start with a 14-day free trial.
 
-## Manage your subscription
+If you already have a subscription, FieldFlow changes your existing plan in place. You won't be charged twice. Stripe prorates the difference. Changing plans during a trial doesn't restart or end the trial.
 
-Click **Manage Billing** to open the Stripe customer portal where you can:
-- Update your payment method (credit card)
-- Switch between monthly and annual billing
+For the Enterprise plan, click **Contact Sales**.
+
+## Manage billing in Stripe
+
+Click **Manage billing** to open the Stripe customer portal. There you can:
+- Update your payment method
 - View and download invoices
 - Cancel your subscription
 
 ## Cancel your subscription
 
-1. Go to **Billing** > **Manage Billing**
-2. Click **Cancel plan** in the Stripe portal
-3. Your access continues until the end of the current billing period
-4. After that, your organization reverts to the Free plan
+1. Go to **Billing** > **Manage billing**
+2. Cancel the plan in the Stripe portal
+3. Your plan stays active until the end of the current billing period
 
-Your data is not deleted when you cancel — your projects and records remain but become inaccessible until you resubscribe.
+After that, your organization moves to the Free plan. The Free plan can't create projects or sync data. To sync again, subscribe again from **Billing**.
 
 ## Payment failures
 
-If a payment fails, you will receive an email notification. Stripe will retry the charge automatically over several days. Update your payment method in the Stripe portal to resolve the issue.
+If a payment fails, Stripe retries the charge. Update your payment method in **Manage billing** to fix it.
 
-## Who can manage billing?
+## After an ownership transfer
 
-Only organization **owners** and **admins** can access billing settings. Regular members cannot view or change the subscription.
+When ownership moves to someone else, the subscription moves with the organization. The card on file does not change. The new owner should open **Manage billing** and add their own payment method. See [Transferring Account Ownership](/billing/transfer-ownership/).

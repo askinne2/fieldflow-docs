@@ -3,35 +3,63 @@ title: Field Mapping
 description: Tell FieldFlow what each column in your spreadsheet represents.
 ---
 
-Field mapping is how you tell FieldFlow what your data means. A column called "Phone" might contain phone numbers, but FieldFlow needs you to confirm that so it can format and display it correctly.
+Field mapping tells FieldFlow what your columns mean and which ones to use. A column called "Phone" probably holds phone numbers, but you confirm that here so FieldFlow can format it and make it clickable.
 
-## How it works
+:::note
+A sync only copies mapped columns. Map your fields and save them **before** you sync. If you change your mappings later, sync again.
+:::
 
-1. Go to your project's **Configure > Fields** tab
-2. You'll see every column from your Google Sheet listed
-3. For each column, you can set:
-   - **Field name** — what to call this field in the directory
-   - **Field type** — how FieldFlow should treat the data (text, URL, image, phone, etc.)
-   - **Visible** — whether this field shows up in directory cards
-   - **Label** — the display label users see
+## Open the Fields tab
 
-## Auto-detection
+Go to your project's **Configure** > **Fields** tab.
 
-FieldFlow tries to auto-detect field types based on your data. For example:
-- A column full of URLs will be detected as **URL**
-- A column with image links will be detected as **Image**
-- A column with comma-separated categories might be detected as **Taxonomy**
+## Load your columns
 
-You can always override the auto-detected type.
+Click **Fetch columns from sheet**. FieldFlow reads the headers in row 1 of your sheet and lists each column.
+
+FieldFlow guesses a type for each column from its header name. For example, a header containing "email" becomes **Email**, and one containing "website" or "url" becomes **URL**. You can change any guess.
+
+Click **Preview sample data** to see a few rows from your sheet while you map.
+
+## Choose a purpose for each column
+
+Every column has a **Purpose**:
+
+| Purpose | What it does |
+|---|---|
+| **Display field** | Synced and available to show on cards and detail pages |
+| **Taxonomy** | Synced as categories, used for filters, sorting, and colored tags |
+| **Hidden** | Not shown in the directory |
+
+Turn the **Enabled** switch off to leave a column out. Use **Enable all** or **Disable all** to change a whole group at once.
+
+### Display fields
+
+For a display field, set:
+- **Field Name**: a short internal name (for example, `email`)
+- **Field Type**: how to format the value. See [Field Types Reference](/field-mapping/field-types/)
+
+### Taxonomy fields
+
+For a taxonomy, set:
+- **Taxonomy Name**: an internal name (for example, `service_type`)
+- **Taxonomy Label**: what visitors see (for example, "Service Type")
+- **Type**: Flat, Multi-value, or Hierarchical
+- **Display Style**: Badge, Chip, Text, or Hidden
+
+See [Taxonomies](/filters-and-search/taxonomies/) for what each option does.
+
+Click **Analyze taxonomies** to have FieldFlow look at your data and suggest which columns should be taxonomies, and which type to use.
+
+## Save
+
+Click **Save all mappings**. Then run a sync from the **Sync** tab so your directory picks up the changes.
 
 ## Tips
 
-- You don't need to map every column. Only map the ones you want in your directory
-- Field names should be short and clear (they appear in the layout builder and filters)
-- If a column contains multiple categories separated by commas, set it as **Taxonomy** type
-
-## Next step
-
-Check the Field Types Reference for details on each type and when to use it.
+- You don't need to map every column. Only enable the ones you want
+- Keep field names short and clear. They appear in the layout builder
+- If a column holds several categories separated by commas, make it a **Taxonomy** with type **Multi-value**
+- If you add columns to your sheet later, click **Fetch columns from sheet** again, then save and sync
 
 **Next:** [Field Types Reference →](/field-mapping/field-types/)

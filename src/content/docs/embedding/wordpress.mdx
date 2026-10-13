@@ -73,13 +73,14 @@ If you paste the embed code in the "Visual" tab, WordPress may strip or reformat
 ## Troubleshooting
 
 **Directory not showing:**
-- Make sure your API key is valid and not revoked
+- Make sure you replaced `YOUR_API_KEY` with a real key, and that the key hasn't been revoked
 - Check that the allowed origins on your API key include your WordPress site's domain
 - View the browser console (F12 > Console) for error messages
 
 **"Failed to fetch" error:**
-- Your API key's domain whitelist may not include this site's URL
-- Check that `apiBaseUrl` is set to `https://app.getfieldflow.io`
+- Your API key's allowed origins may not include this site's URL
+- Make sure the API key hasn't been revoked
+- Check that `apiBaseUrl` is `https://getfieldflow.io`, as in the snippet from the Publish tab
 
 **Directory appears briefly then disappears:**
 - A WordPress plugin may be conflicting with the embed script

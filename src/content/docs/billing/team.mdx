@@ -1,39 +1,66 @@
 ---
 title: Team Management
-description: Invite team members and manage roles.
+description: Invite team members, understand roles, and manage who has access.
 ---
 
-FieldFlow supports team collaboration. Multiple people can manage projects, configure layouts, and run syncs within the same organization.
+FieldFlow supports team collaboration. Several people can work on the same organization's projects, layouts, and syncs.
+
+Go to **Team** in the left sidebar (under **Organization**) to see everyone with access.
 
 ## Invite a team member
 
-1. Go to **Team** in the left sidebar
-2. Click **Invite Member**
-3. Enter their email address
-4. Select a role
-5. Click **Send Invite**
+Owners and Admins can invite people.
 
-The invited person receives an email with a link to join. They'll create a FieldFlow account (or sign in if they already have one) and be added to your organization.
+1. Go to **Team**
+2. In **Invite a team member**, enter their email address
+3. Choose a role: **Admin**, **Editor**, or **Viewer**
+4. Click **Send invitation**
+
+The person gets an email with a link to join. If they don't have a FieldFlow account yet, the link lets them create one. They'll set a password to finish signing up. If they already have an account, they sign in and join.
+
+Invitations expire after 30 days.
+
+### Pending invitations
+
+Invitations that haven't been accepted yet appear under **Pending invitations**, with their role and expiration date. Click **Cancel** to withdraw one.
 
 ## Roles
 
-| Role | Can do |
+| Role | What they can do |
 |---|---|
-| **Owner** | Everything — billing, team management, all project settings |
-| **Admin** | Everything except transferring ownership |
-| **Editor** | Create and edit projects, run syncs, configure layouts |
-| **Viewer** | View projects and settings (read-only) |
+| **Owner** | Everything: billing, inviting and removing members, all projects, and [transferring ownership](/billing/transfer-ownership/) |
+| **Admin** | Billing, inviting and removing members, and all projects. Can't transfer ownership |
+| **Editor** | Create, edit, sync, publish, and delete projects. Manage API keys. Can't manage billing or the team |
+| **Viewer** | Best for people who mainly need to review projects. Can't manage billing or the team |
 
-Each organization has exactly one owner. The owner can promote other members to admin.
+Each organization has exactly one Owner.
+
+## Change someone's role
+
+To change someone's role, remove them and invite them again with the new role.
+
+To make someone else the Owner, use [Transferring Account Ownership](/billing/transfer-ownership/).
 
 ## Remove a team member
 
+Owners and Admins can remove members.
+
 1. Go to **Team**
 2. Find the member
-3. Click **Remove**
+3. Click **Remove** and confirm
 
-Removing a member revokes their access immediately. Their personal account remains active — they just lose access to your organization's projects.
+Removing a member takes away their access right away. Their FieldFlow login still works. They just can't see your organization's projects anymore.
 
-## Multiple organizations
+The Owner can't be removed. You also can't remove yourself.
 
-A person can be a member of multiple organizations. Each organization has its own projects, billing, and team. Switch between organizations using the organization selector in the sidebar.
+## Transfer ownership
+
+The Owner can hand the organization to someone else from the **Transfer ownership** section at the bottom of the Team page. See [Transferring Account Ownership](/billing/transfer-ownership/).
+
+## Belonging to more than one organization
+
+A person can be a member of more than one organization. Each organization has its own projects, billing, and team.
+
+- Your project list shows projects from every organization you belong to.
+- The **Billing** page has an **Organization** picker when you belong to more than one.
+- Other pages, such as **Team** and **Preferences**, show one organization at a time. If you need to work in a different organization, contact [support@fieldflow.io](mailto:support@fieldflow.io).

@@ -1,0 +1,33 @@
+---
+title: Map View
+description: Show your directory records on an interactive map.
+---
+
+Map view adds a **List** / **Map** toggle to your directory so visitors can see records as pins on a map.
+
+## Turn on map view
+
+1. Make sure your sheet has location data. Use either:
+   - One column with latitude and longitude, like `34.8526, -82.3940`, mapped as **Coordinates (map)** in **Configure** > **Fields**, or
+   - Separate **Latitude** and **Longitude** columns
+2. Sync your data
+3. Go to your project's **Overview** tab
+4. Check **Enable map view**
+5. Click **Save**
+
+Visitors now see a **List** / **Map** toggle in the directory toolbar.
+
+## How the map works
+
+- Records without coordinates still appear in the list, just not on the map
+- Nearby pins are grouped together. Click a group to zoom in
+- The map shows up to 100 records at a time
+- Search and filters apply to the map too
+
+## Marker colors
+
+To color pins by category, set **Category colors** in **Configure** > **Filters & Sorting**. See [Taxonomies](/filters-and-search/taxonomies/#category-colors).
+
+## Detail pages
+
+When a record has coordinates, its [detail page](/display/detail-pages/) also shows a map card with an **Open in Google Maps** button.

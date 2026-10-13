@@ -1,0 +1,117 @@
+---
+title: Transferring Account Ownership
+description: Hand your FieldFlow organization, projects, and subscription to a new owner.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Use an ownership transfer when someone else should take over your FieldFlow account. For example, an agency handing a finished directory to its client, or a staff member leaving the organization.
+
+The transfer moves the whole organization. Nothing is copied or rebuilt.
+
+## What changes and what stays the same
+
+**Stays the same:**
+- The organization, its projects, and all synced data
+- Layouts, filters, quizzes, and settings
+- API keys and embed codes, so directories already on websites keep working
+- Public directory and detail page links
+- The subscription and plan
+
+**Changes:**
+- The recipient becomes the **Owner**
+- You (the previous owner) become an **Admin** and keep access
+- The billing email on the subscription is updated to the new owner's email
+
+:::caution[The payment method does not change]
+The subscription moves with the organization, but the card on file stays the same. After accepting, the new owner should go to **Billing** > **Manage billing** and replace the payment method with their own.
+:::
+
+## Before you start
+
+- Only the **Owner** can transfer ownership. Admins, Editors, and Viewers don't see this option.
+- The recipient does **not** need a FieldFlow account. If they're new, they create one from the email you send them.
+- You can have one pending transfer at a time.
+
+:::caution[Tell the recipient not to sign up first]
+The recipient should **not** create a FieldFlow account on their own before accepting. Signing up separately gives them their own empty organization. After they accept, their dashboard may open that empty organization instead of yours.
+
+Ask them to wait for the transfer email and use the link in it. That link walks them through creating their account and accepting in one step.
+:::
+
+## Start a transfer
+
+<Steps>
+
+1. Go to **Team** in the left sidebar (under **Organization**).
+
+2. Scroll to the **Transfer ownership** section at the bottom of the page.
+
+3. Enter the recipient's email address.
+
+4. Click **Transfer ownership**.
+
+</Steps>
+
+The section now shows **Pending — sent to** the recipient's email, with the date the offer expires.
+
+The transfer does not happen yet. Nothing changes until the recipient accepts.
+
+## What the recipient sees
+
+FieldFlow emails the recipient a link to accept. What happens next depends on whether they already have an account.
+
+### New to FieldFlow
+
+1. They open the invitation email and click the link.
+2. They choose a password (at least 8 characters) to finish creating their account. Their email is already verified by the link.
+3. They see a page that says **Take over** your organization's name, with who sent the transfer.
+4. They click **Accept and take over**.
+
+### Already a FieldFlow user
+
+1. They click the link in the email and sign in if asked. They must sign in with the same email address the transfer was sent to.
+2. They click **Accept and take over**.
+
+### After accepting
+
+The recipient can rename the organization right away by changing the **Organization name** and **URL slug**. This step is optional. Click **Save & continue** to rename, or **Skip for now** to keep the current name.
+
+To rename the organization later, contact [support@fieldflow.io](mailto:support@fieldflow.io).
+
+The recipient can also click **Decline** instead of accepting. You'll keep ownership and can start a new transfer.
+
+## Expiration
+
+A transfer offer expires after **7 days**. After that, the link stops working. To try again, start a new transfer.
+
+## Cancel a pending transfer
+
+While the transfer is pending, go to **Team** and click **Cancel transfer**. The link in the email stops working.
+
+A pending transfer is also canceled automatically if you remove the recipient or yourself from the team.
+
+## After the transfer
+
+- The new owner controls billing, the team, and future transfers.
+- As an Admin, you can still work on projects and manage the team, unless the new owner removes you.
+- Once accepted, the transfer can't be undone from your side. To get ownership back, the new owner has to transfer it to you.
+
+## Troubleshooting
+
+**"An ownership transfer is already pending for this organization."**
+Cancel the pending transfer first, then start a new one.
+
+**"This transfer was sent to a different email address."**
+The recipient is signed in with a different email. They should sign out and sign in with the address the transfer was sent to.
+
+**"This transfer is invalid or has expired."**
+The offer expired, was canceled, or was already used. Start a new transfer.
+
+**The recipient accepted, but their dashboard shows a different, empty organization.**
+This happens when the recipient already had their own FieldFlow organization. Your projects still appear in their project list, and the **Billing** page has an **Organization** picker. If they need help, contact [support@fieldflow.io](mailto:support@fieldflow.io).
+
+## Related
+
+- [Team Management](/billing/team/)
+- [Managing Your Subscription](/billing/managing-subscription/)

@@ -1,41 +1,51 @@
 ---
 title: Colors & Branding
-description: Customize your directory's colors to match your brand.
+description: Match your directory's colors to your brand.
 ---
 
-FieldFlow lets you adjust the visual style of your directory so it blends with your website's design.
+You can adjust your directory's colors so it fits in with your website.
 
-## Color settings
+## Where to change colors
 
-In the **Configure > Display** tab, you can customize:
+Go to **Configure** > **Display** and open the **Customize** panel. Color settings are spread across these sections:
 
-### Primary color
-Used for links, buttons, and accent elements. Pick a color that matches your brand.
+### Header
+- **Header style**: Flat color or Gradient
+- **Header background** (flat) or a **Gradient preset**, with optional custom gradient start and end colors
+- **Header text color**: leave blank to use automatic contrast
 
-### Card borders and shadows
-- **Subtle** — light borders, minimal shadow
-- **Prominent** — visible borders with drop shadow
+### Card Surface
+- **Card background**
+- **Card border**
 
-### Header style
-- **Gradient** — a color gradient behind the card header area
-- **Flat** — solid background color
+### Buttons
+- **Primary**: used for buttons, links, and accents
+- **Button text**
+- **Pills (secondary)**: leave blank to base it on the primary color
 
-## How colors apply
+### Text
+- **Label color**
+- **Body text** color
 
-Your color choices affect card link colors, filter button active states, search focus ring, detail page hero background, taxonomy tag colors, and "View Details" buttons.
+Leave a color blank to use the default.
 
-## Theme options for embeds
+Click **Save layout** to apply your changes.
 
-| Theme | Description |
-|---|---|
-| **System** | Follows the visitor's device preference (light or dark) |
-| **Light** | Always uses a light background |
-| **Dark** | Always uses a dark background |
+## Category colors
 
-The theme is set in your [embed code](/publishing/embed-code/), not in the layout builder.
+To color specific taxonomy terms (for example, a different color for each service type), go to **Configure** > **Filters & Sorting** > **Category colors**. These colors are used for map markers and filter pills. See [Taxonomies](/filters-and-search/taxonomies/#category-colors).
+
+## Light and dark mode
+
+Directories support light and dark mode.
+
+- On the hosted directory, it follows the visitor's device setting.
+- For embeds, you choose **System (follow device)**, **Light**, or **Dark** when you copy your [embed code](/publishing/embed-code/).
+
+FieldFlow adjusts link colors in dark mode so text stays readable against dark backgrounds.
 
 ## Tips
 
-- Pick a primary color with enough contrast against both light and dark backgrounds
-- Test your directory in both light and dark mode before publishing
-- Use the live preview in the layout builder to see changes in real time
+- Pick a primary color with good contrast in both light and dark mode
+- Check your directory in both modes before publishing
+- Use the live preview in the Display tab to see changes right away

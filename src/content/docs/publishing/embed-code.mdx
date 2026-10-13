@@ -1,78 +1,85 @@
 ---
 title: Embed Code
-description: Get the embed snippet for your directory and customize its options.
+description: Get the embed snippet for your directory and choose its options.
 ---
 
-The embed code is a small HTML snippet you paste into your website. It loads your FieldFlow directory directly on your page.
+The embed code is a small HTML snippet you paste into your website. It shows your FieldFlow directory or quiz right on your page.
 
 ## Get your embed code
 
 1. Go to your project's **Publish** tab
-2. In the **Embed on your site** section:
-   - Choose an **embed type**: Directory only, Quiz only, or Quiz + Directory
-   - Choose a **theme**: System (follows visitor's device), Light, or Dark
-3. Copy the generated snippet
+2. In **Embed on your site**:
+   - Choose an **Embed type**: **Directory only**, **Quiz only**, or **Quiz + directory**
+   - Choose a theme: **System (follow device)**, **Light**, or **Dark**
+   - Optionally, pre-select categories (see [Start with filters](#start-with-filters))
+3. Click **Copy code**
+4. Replace `YOUR_API_KEY` in the snippet with a key from **API keys for embed** on the same tab. See [API Keys](/publishing/api-keys/)
+
+:::tip
+When you create a new API key, the confirmation panel has a **Copy full embed code** button that copies the snippet with the key already filled in.
+:::
 
 ## The embed snippet
 
-A typical embed looks like this:
+A directory embed looks like this:
 
 ```html
 <div id="fieldflow-directory"></div>
-<script src="https://app.getfieldflow.io/embed.js"></script>
 <script>
   window.FieldFlow = window.FieldFlow || { q: [] };
   window.FieldFlow.q.push({
     projectId: "your-project-id",
-    apiKey: "ff_live_your_api_key",
+    apiKey: "YOUR_API_KEY",
     container: "#fieldflow-directory",
-    apiBaseUrl: "https://app.getfieldflow.io",
-    options: {
-      showSearch: true,
-      showFilters: true,
-      itemsPerPage: 20
-    }
+    apiBaseUrl: "https://getfieldflow.io",
+    options: { showSearch: true, showFilters: true, itemsPerPage: 20 }
   });
 </script>
+<script src="https://getfieldflow.io/embed.js" async></script>
 ```
 
-## Embed options
-
-| Option | Default | Description |
-|---|---|---|
-| `projectId` | *(required)* | Your FieldFlow project UUID |
-| `apiKey` | *(required)* | API key from the Publish tab |
-| `container` | *(required)* | CSS selector for the HTML element to render into |
-| `apiBaseUrl` | *(required)* | Always `https://app.getfieldflow.io` |
-| `mode` | `"directory"` | `"directory"`, `"quiz"`, or `"quiz+directory"` |
-| `options.showSearch` | `true` | Show the search box |
-| `options.showFilters` | `true` | Show the filter sidebar |
-| `options.itemsPerPage` | `20` | Records per page |
+Always copy the snippet from the Publish tab rather than typing it. It fills in your project ID and the options you picked.
 
 ## Embed types
 
 ### Directory only
-Shows the full searchable, filterable directory. This is the default.
+The full directory with search and filters. This is the default.
 
 ### Quiz only
-Shows the Quiz Flow without the directory. After completing the quiz, users see filtered results.
+Shows just the quiz. Set **Redirect path after quiz** (for example, `/resources`). When a visitor finishes, they're sent to that path on your site, with their answers added to the URL as filter parameters.
 
-### Quiz + Directory
-Shows the quiz first, then reveals the directory filtered by the user's answers. Users can also click "View Full Directory" to see everything.
+### Quiz + directory
+Shows the quiz first, then the results in the same embed, with a **Start over** option.
 
-## Theme options
+See [Quiz Flow](/quiz-flow/overview/) to set up a quiz.
 
-- **System** — follows the visitor's device preference (light or dark mode)
-- **Light** — always light background
-- **Dark** — always dark background
+## Theme
 
-## Pre-filtering
+- **System (follow device)**: matches the visitor's light or dark mode setting
+- **Light**: always light
+- **Dark**: always dark
 
-You can pre-select taxonomy filters in the embed code so the directory loads with specific categories already active. Enable this in the Publish tab under **Start with filters**.
+Use Light or Dark to match your page's background. Light and Dark add a `theme` line to the snippet.
+
+## Start with filters
+
+For **Directory only** and **Quiz + directory**, you can have the directory load with some categories already selected:
+
+1. Under **Start with filters (optional)**, check **Pre-select categories in the embed**
+2. Pick a **Category column**
+3. Check the terms to pre-select
+
+The snippet updates automatically. Click **Clear pre-filter** to remove it.
+
+If no categories are listed, turn on **Enable filtering** for a taxonomy in **Configure** > **Filters & Sorting**, then sync.
+
+## Detail pages in embeds
+
+If [detail pages](/display/detail-pages/) are on, clicking a record opens its details inside the embed, with a **Back to directory** button. To open your own pages instead, see [Detail URL template](/embedding/advanced-options/#detail-url-template).
 
 ## Next steps
 
-Once you have your embed code, paste it into your website. See the platform-specific guides:
+Paste the code into your website. See the platform guides:
 
 - [WordPress](/embedding/wordpress/)
 - [Webflow](/embedding/webflow/)
