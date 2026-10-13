@@ -1,61 +1,64 @@
 ---
 title: API Keys
-description: Create and manage secure API keys for your directory embeds.
+description: Create and manage API keys for your directory embeds.
 ---
 
-API keys control who can access your directory data. Each embed on your website should use its own API key.
+Embeds need an API key to load your directory data. You manage keys on any project's **Publish** tab, in the **API keys for embed** section.
 
-## Why API keys?
-
-When you embed a FieldFlow directory on your website, the embed code needs a key to fetch data from FieldFlow's servers. Keys let you:
-
-- **Control access** — revoke a key without affecting other embeds
-- **Restrict domains** — limit which websites can use the key
-- **Track usage** — each key has its own usage metrics
+API keys belong to your **organization**. A key works for every project in the organization, and the list is the same on every project's Publish tab.
 
 ## Create an API key
 
-1. Go to your project's **Publish** tab
-2. In the **API Keys** section, click **Create API Key**
+1. Go to a project's **Publish** tab
+2. In **API keys for embed**, click **Create API key**
 3. Fill in:
-   - **Name** — a label for your reference (e.g., "WordPress site", "Webflow embed")
-   - **Allowed Origins** — the website domains where this key can be used (optional but recommended)
-4. Click **Create**
+   - **Key name (optional)**: a label for your reference, like "WordPress site"
+   - **Access scope**: **Read-only** (recommended for embeds) or **Full**
+   - **Allowed origins (optional)**: the websites that may use this key
+4. Click **Create key**
 
-The key will be displayed once. Copy it immediately — you'll need it for your embed code.
+The new key is shown right away. Click **Copy key**, or **Copy full embed code** to copy the snippet with the key filled in. Click **Done** when finished.
 
-## Domain restrictions
+You can see the key again later. Click **Reveal key** next to it in the list.
 
-The **Allowed Origins** field lets you restrict which websites can use this key. Enter one or more domains:
+## Access scope
+
+- **Read-only** can only fetch directory data. Use this for embeds
+- **Full** can also manage project data. Don't put a Full key in a public web page
+
+## Allowed origins
+
+Allowed origins limit which websites can use a key. Enter one per line, or separate them with commas:
 
 ```
 https://mywebsite.org
 https://www.mywebsite.org
 ```
 
-If left empty, the key works from any domain. For production sites, we recommend setting allowed origins to prevent unauthorized use.
+If you leave it blank, the key works from any website. For live sites, set allowed origins so others can't reuse your key.
 
 ## Key format
 
-FieldFlow API keys look like this:
+FieldFlow API keys start with `ff_live_`. The list shows the start of each key, its scope, when it was created, and its allowed origins.
 
-```
-ff_live_9d0dae2ed14dfa9bd5b69c35bd9f13ff911deb6c1e3060e9
-```
+## Revoking keys
 
-The `ff_live_` prefix identifies it as a FieldFlow key. Only the first 12 characters are shown in the dashboard after creation — use **Reveal Key** to see the full key.
+- Click **Revoke** next to a key to turn it off
+- Click **Revoke all keys** to turn off every key in the organization
 
-## Revoking a key
-
-To revoke a key, click the **Revoke** button next to it in the Publish tab. This immediately stops all embeds using that key from loading data.
+Revoking is immediate and permanent. Any embed using that key stops loading data until you create a new key and update the embed code.
 
 :::caution
-Revoking a key is permanent. Any website using that key will show "Failed to fetch" until you create a new key and update the embed code.
+Because keys are shared across your organization, revoking a key can break embeds for other projects that use it.
 :::
+
+### Legacy keys
+
+Some older keys can't be revealed. You'll see "This key is legacy and cannot be revealed." Revoke it and create a new one, then update your embed code.
 
 ## Best practices
 
-- Create one key per website or embed location
-- Set allowed origins on all production keys
+- Create one key per website
+- Use **Read-only** keys in embeds
+- Set allowed origins on keys used by live sites
 - Revoke keys you no longer use
-- Never share keys publicly (they're included in embed code but scoped to read-only access)

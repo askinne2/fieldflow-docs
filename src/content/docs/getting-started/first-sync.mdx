@@ -1,45 +1,52 @@
 ---
 title: Your First Sync
-description: Pull data from your Google Sheet into FieldFlow and verify it looks right.
+description: Pull data from your Google Sheet into FieldFlow and check that it looks right.
 ---
 
-Syncing reads data from your Google Sheet and stores a copy in FieldFlow so your directory loads quickly. Your original spreadsheet is never modified.
+Syncing reads your Google Sheet and stores a copy of the rows in FieldFlow so your directory loads quickly. Your spreadsheet is never changed.
+
+## Map your fields first
+
+A sync only copies the columns you've mapped. Before your first sync:
+
+1. Go to **Configure** > **Fields**
+2. Click **Fetch columns from sheet** to load your column headers
+3. Review each column, then click **Save all mappings**
+
+See [Field Mapping](/field-mapping/overview/) for details.
 
 ## Run your first sync
 
-1. Open your project and go to the **Sync** tab
-2. Click **Sync Now**
-3. Watch the progress — it usually takes a few seconds
+1. Go to the **Sync** tab
+2. Click **Sync now**
+3. Wait a few seconds. The page refreshes the status while the sync runs
 
-When it completes, you'll see a success message showing how many records were imported.
+When it finishes, the sync appears under **Recent syncs** with how many records were created, updated, and deleted.
 
-## Verify your data
+## Check your data
 
-After syncing, go to the **Configure > Fields** tab. You should see all the columns from your Google Sheet listed. Each column can be mapped to a field type.
+- Open your directory from **View your directory** on the Sync or Overview tab
+- Make sure your records and fields show up as expected
 
 If a column is missing, check that:
-- Your Google Sheet has data in that column
-- The column has a header in row 1
-- You specified the correct worksheet name
+- It's mapped in **Configure** > **Fields** and saved
+- It has a header in row 1
+- You ran a sync after saving the mapping
 
-## What "syncing" means
+## What syncing means
 
-- FieldFlow reads your Google Sheet and creates a snapshot of the data
-- The snapshot is what powers your live directory
-- Your original spreadsheet is untouched — FieldFlow has read-only access
-- When you update the spreadsheet, sync again (manually or on a schedule) to refresh the directory
+- FieldFlow reads your Google Sheet and saves a snapshot of the mapped columns
+- That snapshot powers your live directory
+- When you change the spreadsheet, sync again to update the directory, by hand or on a schedule
 
 ## Troubleshooting
 
-**"Sync failed" error:**
-- Make sure your Google account is still connected (check the Overview tab)
-- Verify the Sheet ID is correct
-- Ensure the worksheet name matches a tab in your spreadsheet
+**The sync failed:**
+- Make sure Google Sheets is still connected (check the **Overview** tab)
+- Check the Sheet ID and worksheet name on the Overview tab under **Data source**
+- Make sure the connected Google account can open the sheet
 
-**Missing rows:**
-- Free accounts have row limits based on your plan. Check your [plan limits](/billing/plans/)
-
-**Next steps:**
-Now that your data is in FieldFlow, you'll want to map your fields so the directory knows what to display.
+**Some rows are missing:**
+- Your plan limits how many records each project can hold. Look for a **Row limit reached** warning on the Sync tab. See [Plans & Pricing](/billing/plans/)
 
 **Next:** [Field Mapping →](/field-mapping/overview/)

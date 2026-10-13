@@ -1,28 +1,27 @@
 ---
 title: Quiz Flow Overview
-description: Guide visitors to the right resources with an AI-powered quiz.
+description: Guide visitors to the right resources with a short quiz.
 ---
 
-Quiz Flow is a guided questionnaire that helps visitors find the right resources in your directory. Instead of browsing and filtering manually, visitors answer a few questions and FieldFlow shows them the most relevant results.
+Quiz Flow is a short guided questionnaire. Instead of browsing and filtering on their own, visitors answer a few questions and see the records that best match their answers.
 
 ## How it works
 
-1. You create a quiz with questions and answer options
-2. Each answer is tagged with keywords
-3. FieldFlow's AI maps those tags to your directory's taxonomy terms
-4. When a visitor completes the quiz, they see a filtered view of your directory matching their answers
+1. You describe your directory, and FieldFlow uses AI to write a quiz with questions and answer options
+2. Each answer option carries tags (keywords)
+3. When you activate the quiz, FieldFlow uses AI to match those tags to your taxonomy terms
+4. When a visitor finishes the quiz, they see your directory filtered to their answers, with the closest matches first
 
 ## When to use Quiz Flow
 
-Quiz Flow is especially helpful when:
+Quiz Flow helps when:
 - Your directory has many records and visitors might feel overwhelmed
-- Visitors don't know the right terminology to search or filter
-- You want to guide people through a decision process (e.g., "What kind of help do you need?")
-- Your audience is less tech-savvy and benefits from a conversational approach
+- Visitors don't know the right words to search or filter by
+- You want to walk people through a decision, like "What kind of help do you need?"
 
 ## Example
 
-A nonprofit resource directory might have a quiz like:
+A resource directory might ask:
 
 > **What do you need help with today?**
 > - Finding housing
@@ -30,23 +29,25 @@ A nonprofit resource directory might have a quiz like:
 > - Legal help
 > - Finding a job
 
-Based on the answer, the directory filters to show only relevant resources.
+Based on the answer, the results show only related resources.
 
-## Quiz modes
+## Ways to show the quiz
 
-You can embed the quiz in three ways:
-
-| Mode | What happens |
+| Option | What visitors see |
 |---|---|
-| **Quiz only** | Shows the quiz, then filtered results |
-| **Quiz + Directory** | Shows quiz first, then reveals directory with results. Visitor can also browse the full directory |
-| **Directory only** | No quiz, just the standard directory (default) |
+| **Quiz link** | A hosted quiz page at `https://getfieldflow.io/d/[projectId]/quiz` |
+| **Quiz only** embed | The quiz on your site. When it's done, visitors go to a page path you choose, with their answers added to the URL |
+| **Quiz + directory** embed | The quiz, then results in the same embed, with a **Start over** option |
 
-Set the mode in your [embed code](/publishing/embed-code/) or the Publish tab.
+For most sites, **Quiz + directory** is the simplest choice, because the results show up right in the embed. See [Embed Code](/publishing/embed-code/) for the embed options.
+
+## Before you start
+
+Quiz Flow works best when your directory already has [taxonomies](/filters-and-search/taxonomies/) with synced terms, because quiz answers are matched to those terms.
 
 ## Getting started
 
-1. [Create a quiz](/quiz-flow/creating-a-quiz/) with questions and options
-2. [Set up tag mapping](/quiz-flow/tag-mapping/) to connect answers to your data
-3. Activate the quiz in your project settings
-4. Update your embed code to use quiz mode
+1. In the **Overview** tab, check **Show Quiz Flow link in Publish tab** and click **Save**
+2. [Create a quiz](/quiz-flow/creating-a-quiz/) in **Configure** > **Quiz**
+3. Activate it, which also builds the [tag mapping](/quiz-flow/tag-mapping/)
+4. Share the quiz link or add a quiz embed from the **Publish** tab

@@ -1,47 +1,57 @@
 ---
 title: Account Settings
-description: Profile, password, workspace preferences, and notifications.
+description: Profile, password, preferences, notifications, and deleting your account.
 ---
+
+Your personal settings live under **Account** in the left sidebar. There are two pages: **Profile** and **Preferences**.
 
 ## Profile
 
-Go to **Account** in the sidebar to update:
+Go to **Account** > **Profile** to update:
 - **First name** and **Last name**
-- **Email** — displayed but not editable (tied to your authentication)
+- **Email** is shown but can't be changed here, because it's your sign-in identity
 
-## Password
+Click **Save changes** when you're done.
 
-By default, FieldFlow uses email verification codes for sign-in. You can optionally set a password for faster access:
+### Password
 
-1. Go to **Account**
-2. Click **Set Password** (or **Change Password** if one is already set)
-3. Follow the verification flow
+On the Profile page:
+- If you don't have a password yet, click **Set a password**
+- If you do, click **Change password** and enter your current password
 
-Even with a password set, email code sign-in remains available as a fallback.
+Passwords must be at least 8 characters.
 
-## Workspace preferences
+## Preferences
 
-Go to **Settings** in the sidebar to configure:
+Go to **Account** > **Preferences** to set:
 
 | Setting | Options |
 |---|---|
-| **Default project** | Which project loads first on the dashboard |
-| **Timezone** | Auto-detect or manual selection |
+| **Default project** | Which project to open first, or None |
+| **Timezone** | Auto-detect or a specific timezone |
 | **Date format** | US (MM/DD/YYYY) or International (DD/MM/YYYY) |
 | **Items per page** | 10, 25, 50, or 100 (for dashboard lists) |
 
 ## Notifications
 
-Control which emails you receive:
+Also on the Preferences page:
 
 | Notification | Default | Description |
 |---|---|---|
-| **Sync failure alerts** | On | Email when a sync fails after all retries |
-| **Product updates** | On | Occasional emails about new features |
-| **Weekly digest** | Coming soon | Summary of sync activity and usage |
+| **Email on sync failures** | On | Get an email when a sync fails after all retries |
+| **Product updates** | On | News and feature announcements |
+
+Sync failure emails go to the person who started the sync. For automatic syncs, that's the person who connected Google Sheets for the organization (or the Owner, if that person has left).
 
 ## Danger zone
 
-At the bottom of Settings:
-- **Export data** — download all your project data as JSON
-- **Delete account** — permanently removes your account, projects, and data. Requires email confirmation. This cannot be undone.
+At the bottom of Preferences:
+
+- **Export data** downloads a JSON file with the synced records from every project you can access.
+- **Delete account** permanently deletes your FieldFlow login. You'll type your email to confirm. This can't be undone.
+
+:::caution
+If you're the Owner of an organization, [transfer ownership](/billing/transfer-ownership/) before you delete your account, so someone can still manage billing and the team.
+:::
+
+To delete a single project instead, see [Create a Project](/getting-started/create-project/#delete-a-project).

@@ -42,6 +42,7 @@ export default defineConfig({
 						{ label: 'Card Layouts', slug: 'display/card-layouts' },
 						{ label: 'Detail Pages', slug: 'display/detail-pages' },
 						{ label: 'Colors & Branding', slug: 'display/colors-and-branding' },
+						{ label: 'Map View', slug: 'display/map-view' },
 					],
 				},
 				{
@@ -91,6 +92,7 @@ export default defineConfig({
 						{ label: 'Plans & Pricing', slug: 'billing/plans' },
 						{ label: 'Managing Your Subscription', slug: 'billing/managing-subscription' },
 						{ label: 'Team Management', slug: 'billing/team' },
+						{ label: 'Transferring Ownership', slug: 'billing/transfer-ownership' },
 						{ label: 'Account Settings', slug: 'billing/settings' },
 					],
 				},

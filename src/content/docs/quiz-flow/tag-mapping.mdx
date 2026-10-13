@@ -3,54 +3,43 @@ title: Tag Mapping
 description: How quiz answers connect to directory results.
 ---
 
-Tag mapping is the bridge between quiz answers and directory results. It tells FieldFlow which taxonomy terms correspond to which answer tags.
+Tag mapping connects quiz answers to your directory's categories. It tells FieldFlow which taxonomy terms go with each answer's tags.
 
 ## How it works
 
-1. Each quiz answer option has **tags** (keywords you assigned when creating the quiz)
-2. Your directory has **taxonomies** with **terms** (categories you set up in Filters)
-3. Tag mapping connects tags → taxonomy terms
+1. Each quiz answer option has **tags**, which are keywords
+2. Your directory has **taxonomies** with **terms**, the categories from your sheet
+3. The tag mapping links tags to terms
 
-When a visitor picks an answer, FieldFlow collects the tags from their selections and finds the matching taxonomy terms to filter the directory.
+When a visitor picks answers, FieldFlow collects their tags, looks up the matching terms, and filters the directory.
 
-## Automatic AI mapping
+## Mapping is automatic
 
-When you activate a quiz, FieldFlow's AI automatically maps your answer tags to taxonomy terms. It reads:
-- Your quiz questions and answer tags
-- Your directory's taxonomy terms
-- The AI Context from your project's Overview tab
+When you click **Activate** on a quiz, FieldFlow uses AI to build the mapping. It looks at:
+- The quiz's answer tags
+- Your taxonomy terms
+- A sample of your directory data
+- The **AI context** from your project's **Overview** tab, if you filled it in
 
-The AI creates a mapping table. You can review and adjust it before going live.
+## Improve the mapping
 
-## Manual mapping
+If quiz results don't feel right:
 
-You can also create or edit mappings manually:
+1. Go to the **Overview** tab and fill in **AI context**. Describe your directory, for example: "Addiction recovery resources in Alabama for adults and families." Click **Save**
+2. Make sure your taxonomies are set up and synced
+3. Go to **Configure** > **Quiz** and click **Regenerate Mapping** on the active quiz
 
-1. Go to **Configure > Quiz**
-2. Open the **Tag Mapping** section
-3. For each answer tag, select which taxonomy term(s) it should map to
+If you see "Could not generate mapping", check that your taxonomies and data are synced, then try again.
 
-### Example mapping
+## How results are ranked
 
-| Answer Tag | Maps To |
-|---|---|
-| `housing` | Service Type: Housing |
-| `shelter` | Service Type: Housing, Service Type: Emergency Shelter |
-| `food` | Service Type: Food Assistance |
-| `greenville` | County: Greenville |
-
-## How results are scored
-
-When a visitor completes the quiz:
-1. All their answer tags are collected
-2. Each tag is mapped to taxonomy terms
-3. Records matching those terms are shown, ranked by how many tags they match
-4. Records matching the most tags appear first
+When a visitor finishes the quiz:
+1. Their answer tags are collected
+2. Each tag is turned into taxonomy terms using the mapping
+3. Records with those terms are shown, with records matching the most terms first
 
 ## Tips
 
-- Tags should be specific enough to differentiate but broad enough to match multiple records
-- Use the AI mapping as a starting point, then review for accuracy
-- Test the quiz yourself to make sure results feel relevant
-- If results are too narrow, broaden your tag-to-term mappings
-- If results are too broad, add more specific tags to your answer options
+- Test the quiz yourself and check that the results make sense
+- Fill in **AI context** before activating for better first results
+- After adding new categories to your sheet, sync and then regenerate the mapping

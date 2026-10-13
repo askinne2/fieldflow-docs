@@ -3,42 +3,39 @@ title: Manual Sync
 description: Pull the latest data from your Google Sheet on demand.
 ---
 
-Manual sync lets you update your directory whenever you want by clicking a button.
+A manual sync updates your directory right away with the latest data from your sheet.
 
 ## Run a manual sync
 
 1. Go to your project's **Sync** tab
-2. Click **Sync Now**
-3. Watch the progress indicator
+2. Click **Sync now**
+3. Watch the status. While a sync runs, the page shows **Syncing…** and refreshes every second
 
-When complete, you'll see a summary:
-- Records processed
-- Records created (new rows)
-- Records updated (changed rows)
-- Records deleted (removed rows)
+When it finishes, the sync appears at the top of **Recent syncs** with:
+- How many records were processed
+- How many were created, updated, and deleted
 
 ## When to sync manually
 
-- After making changes to your Google Sheet
-- When setting up a new project for the first time
-- When troubleshooting data issues
-- Anytime you want to verify your directory is current
+- After you change your Google Sheet
+- After you change your field mapping in **Configure** > **Fields**
+- When setting up a new project
+- When you want to be sure the directory is current
 
 ## What happens during a sync
 
-1. FieldFlow reads all rows from your Google Sheet
-2. Compares them against the existing directory data
-3. Creates new records for new rows
-4. Updates records where data has changed
-5. Removes records for deleted rows
-6. Updates the "Last synced" timestamp
+1. FieldFlow reads the rows from your Google Sheet
+2. It keeps only the columns you've mapped
+3. It adds records for new rows and updates records that changed
+4. It removes records for rows that are no longer in the sheet
+5. It updates taxonomy terms from your taxonomy columns
 
-Your Google Sheet is never modified — FieldFlow only reads from it.
+Your Google Sheet is never changed. FieldFlow only reads it.
 
-## Sync while working
+## Keep working while it syncs
 
-You can continue using the FieldFlow dashboard while a sync runs. The sync happens in the background. The page auto-refreshes the status every second so you can watch progress.
+Syncs run in the background. You can keep using the dashboard. You can't start a second sync while one is already running.
 
 ## After syncing
 
-If you've added new columns to your Sheet, go to **Configure > Fields** to map them. New columns won't appear in your directory until they're mapped to a field type.
+If you've added columns to your sheet, go to **Configure** > **Fields**, click **Fetch columns from sheet**, map the new columns, save, and sync again. New columns don't appear in your directory until they're mapped.

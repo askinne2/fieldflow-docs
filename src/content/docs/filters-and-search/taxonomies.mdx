@@ -3,53 +3,75 @@ title: Taxonomies
 description: Create filterable categories for your directory.
 ---
 
-Taxonomies are the categories visitors use to filter your directory. When someone selects "Housing" or "Food Assistance" in the sidebar, that is a taxonomy filter.
-
-## How taxonomies connect to your data
-
-Each taxonomy maps to a column in your Google Sheet set as the **Taxonomy** field type.
-
-| Sheet Column | Taxonomy Name | Example Values |
-|---|---|---|
-| Service Type | Service Type | Housing, Food, Legal Aid, Employment |
-| County | County | Greenville, Spartanburg, Anderson |
-| Language | Language | English, Spanish, Vietnamese |
+Taxonomies are the categories visitors use to filter your directory. When someone picks "Housing" or "Food Assistance" in the filter panel, that's a taxonomy filter. The individual values, like "Housing", are called **terms**.
 
 ## Create a taxonomy
 
-1. Go to **Configure > Filters & Sorting**
-2. Click **Add Taxonomy**
-3. Set:
-   - **Name** — the taxonomy identifier
-   - **Label** — what visitors see in the filter sidebar
-   - **Display type** — how the filter options appear
+Taxonomies come from columns in your Google Sheet.
 
-## Display types
+1. Go to **Configure** > **Fields**
+2. Find the column (for example, "Service Type")
+3. Set its **Purpose** to **Taxonomy**
+4. Fill in:
+   - **Taxonomy Name**: an internal name, like `service_type`
+   - **Taxonomy Label**: what visitors see, like "Service Type"
+   - **Type**: see below
+   - **Display Style**: see below
+5. Click **Save all mappings**, then run a sync
 
-| Type | Best for | How it looks |
+FieldFlow creates the terms automatically from the values in your sheet when it syncs.
+
+:::tip
+Click **Analyze taxonomies** on the Fields tab to have FieldFlow suggest which columns should be taxonomies.
+:::
+
+## Taxonomy types
+
+| Type | How the cell is read | Example cell |
 |---|---|---|
-| **Dropdown** | Long lists (10+ options) | Select menu |
-| **Checkboxes** | Medium lists (3-10 options) | Checkboxes, allows multiple selections |
-| **Buttons** | Short lists (2-5 options) | Clickable pills/chips |
+| **Flat** | The whole cell is one term | `Housing` |
+| **Multi-value** | The cell is split into several terms using a **Separator** (comma by default) | `Housing, Employment, Legal Aid` |
+| **Hierarchical** | The cell is a path split by a **Hierarchy Separator** (` > ` by default). The record is tagged with the last level | `Health > Mental Health > Counseling` |
 
-## Adding terms
+## Display styles
 
-Terms are the individual values within a taxonomy. You can auto-populate from your data, add manually, or assign colors to specific terms.
+The **Display Style** controls how terms look on cards and detail pages:
 
-## Multiple values per record
+| Style | Looks like |
+|---|---|
+| **Badge** | Small colored tag (default) |
+| **Chip** | Rounded pill |
+| **Text** | Plain text |
+| **Hidden** | Not shown on cards or detail pages (can still be used for filtering) |
 
-Separate values with commas in your Google Sheet:
+## Set up filters
 
-```
-Housing, Employment, Legal Aid
-```
+Go to **Configure** > **Filters & Sorting**. Each taxonomy has these settings:
 
-FieldFlow splits these into individual filter terms automatically.
+- **Enable filtering**: show this taxonomy as a filter
+- **Filter display type**: **pills**, **dropdown**, or **checkboxes**
+- **Allow multiple** (dropdown only): let visitors pick more than one term
+- **Enable sorting**: add "Sort by [taxonomy]" to the sort menu
+- **Sort order**: a number that sets the filter's position. Lower numbers come first (0 is first)
+
+Dropdowns with more than 10 terms get a search box, so visitors can type to find a term.
+
+Only taxonomies mapped to a sheet column appear here.
+
+## Category colors
+
+In **Configure** > **Filters & Sorting**, the **Category colors** section lets you set a color for each term. These colors are used for map markers and filter pills. Leave a color blank to use the default.
+
+You need to save a layout in **Configure** > **Display** first.
+
+## Duplicate filters
+
+If the same filter shows up twice, click **Clean up duplicate taxonomies** at the bottom of the Filters & Sorting tab.
 
 ## How filtering works for visitors
 
-- Selecting a term shows only matching records
-- Multiple terms within one taxonomy: records matching **any** selected term
-- Terms across different taxonomies: records matching **all** selected taxonomies
-- Active filters appear as removable chips above results
-- "Clear all" button resets everything
+- Picking a term shows only matching records
+- Several terms in one taxonomy: records matching **any** of them
+- Terms in different taxonomies: records matching **all** of those taxonomies
+- Active filters show as removable chips
+- **Clear all** resets every filter

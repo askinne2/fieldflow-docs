@@ -1,56 +1,66 @@
 ---
 title: Detail Pages
-description: Enable individual record pages with contact info, maps, and hours.
+description: Give each record its own page with contact info, map, and hours.
 ---
 
-Detail pages give each record in your directory its own full page. When a visitor clicks a card, they see all the information for that resource — contact details, location map, hours, and more.
+Detail pages give each record in your directory its own full page. When a visitor clicks a card's action button, they see everything about that record.
 
-## Enable detail pages
+## Turn on detail pages
 
 1. Go to your project's **Overview** tab
-2. Toggle **Detail Pages** to on
+2. Check **Enable detail pages**
 3. Click **Save**
 
-Once enabled, each card in your directory gets a "View Details" link that opens the full record page.
+Each card then shows an action button (by default, "View Details") that opens the record's detail page. You can rename the button in **Configure** > **Display**.
 
 ## What detail pages include
 
-Detail pages automatically organize your data into sections:
+### Header
+The record title and its category tags.
 
-### Hero section
-The record title, taxonomy tags as colored pills, and primary contact actions (website button, phone link, email link).
+Category tags appear in the header when the taxonomy uses the **Badge** or **Chip** display style and the record has 6 or fewer terms in it. Other categories appear lower on the page in a section you can expand.
 
-### Content sections
-Your mapped fields displayed with labels. If you've configured sections in the layout builder, fields are grouped accordingly.
+### Sections
+Your fields, grouped into the sections you set up.
 
-### Contact information card
-FieldFlow auto-detects contact fields (phone, email, URL, address) and groups them into a sidebar card with click-to-action links.
+### Contact Information
+Website, phone, email, and address fields are gathered into a contact card with click-to-call, email, and website links.
 
-### Map card
-If your record has a **Coordinates** field, a map card appears with the location and an "Open in Google Maps" button.
+### Map
+If the record has coordinates, a map card shows the location with an **Open in Google Maps** button.
 
-### Hours card
-If your record has an **Hours** field, a dedicated card shows operating hours with a clock icon.
+### Hours
+A field named like "Hours" or "Schedule" appears in an **Hours** card with a clock icon.
 
-## Configuring detail page layout
+## Set up sections
 
-Go to **Configure > Detail Page** to customize:
+Go to **Configure** > **Detail Page**.
 
-- **Show/hide sections** — group fields into named sections
-- **Section ordering** — drag to reorder
-- **Field visibility** — choose which fields appear on the detail page vs. only on cards
+1. Under **Sections**, click **+** to add a section
+2. Select the section to edit it in **Section settings**:
+   - **Section name**
+   - **Style**: Card, Plain, or Accordion
+   - **Fields in this section**: check the fields to include
+3. Sections appear on the page in the order listed
+4. Use **Remove section** to delete one
+
+The **Detail page preview** shows how it will look.
+
+The fields you can pick come from **Configure** > **Display**. If you added columns there, use the **Tools** box to sync the section structure with your current Display layout.
 
 ## Detail page URLs
 
-Each record gets a shareable URL like:
+On the hosted directory, each record has a shareable URL like:
 
 ```
-https://app.getfieldflow.io/p/[projectId]/[recordId]
+https://getfieldflow.io/p/[projectId]/[recordId]
 ```
 
-## Navigation
+In an embed, the detail view opens inside the embed. To send visitors to pages on your own site instead, see [Advanced Embed Options](/embedding/advanced-options/#detail-url-template).
 
-Detail pages include:
-- **Back button** — returns to the directory (preserving any active filters)
-- **Share button** — copies the URL or opens the native share dialog
-- **Print button** — opens a print-friendly view
+## Buttons on the detail page
+
+The hosted detail page has:
+- **Back to Directory** (or **Back to results** if the visitor came from a quiz)
+- **Share**: opens your device's share menu, or copies the link
+- **Print**: opens a print-friendly view
