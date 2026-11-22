@@ -1,6 +1,6 @@
 ---
 title: Advanced Embed Options
-description: Detail URL templates, opening a record on load, quiz redirects, and every embed setting.
+description: Detail URL templates, opening a record on load, language, quiz redirects, and every embed setting.
 ---
 
 The Publish tab writes the embed snippet for you. This page explains the settings in that snippet and a few extra ones for custom setups.
@@ -17,13 +17,17 @@ By default, clicking a record opens its details inside the embed. To send visito
 window.FieldFlow.q.push({
   projectId: "...",
   apiKey: "...",
-  container: "#fieldflow-directory",
+  container: "#fieldflow-directory-1a2b3c4d",
   apiBaseUrl: "https://getfieldflow.io",
   detailUrlTemplate: "https://mysite.com/resources/{{externalId}}"
 });
 ```
 
-`{{externalId}}` is replaced with the record's ID. The page opens in a new browser tab.
+`{{externalId}}` is replaced with the record's sheet row, for example `row_7` for the record on row 7 of your sheet. The page opens in a new browser tab.
+
+:::caution
+The `{{externalId}}` value follows the row's position in the sheet. If rows are inserted, deleted, or sorted above a record, its `{{externalId}}` changes, even if you set a [record key](/syncing/record-key/). If your own pages depend on these values, add new rows at the bottom of the sheet.
+:::
 
 ## Open a specific record on load
 
@@ -33,13 +37,19 @@ Use `openRecordId` to load a directory embed with one record's details already o
 window.FieldFlow.q.push({
   projectId: "...",
   apiKey: "...",
-  container: "#fieldflow-directory",
+  container: "#fieldflow-directory-1a2b3c4d",
   apiBaseUrl: "https://getfieldflow.io",
   openRecordId: "record-id-here"
 });
 ```
 
 This is useful when a page on your site should show one specific resource.
+
+To find a record's ID, open the record on your hosted directory. The ID is the last part of its address: `https://getfieldflow.io/p/[projectId]/[recordId]`. Older record IDs still work.
+
+## Links to a record inside an embed
+
+When a visitor opens a record in a directory embed, the page address gets a `#record/...` ending. Anyone who opens that address sees the embed with the record already open. You don't need to set anything up for this.
 
 ## Pre-filtering
 
@@ -67,7 +77,28 @@ You can also build the URL with `FieldFlow.buildFilterUrl("/resources", filters)
 
 ## Theme
 
-Add `theme: "light"` or `theme: "dark"` to force a theme. Leave it out to follow the visitor's device. The Publish tab adds this for you when you pick Light or Dark.
+Set `theme` to `"light"`, `"dark"`, or `"system"`. `"system"` follows the visitor's device. If you leave `theme` out, the embed is light. The Publish tab always adds this line for you.
+
+## Language
+
+Set `lang` to a language code to start the embed in that language:
+
+```js
+window.FieldFlow.q.push({
+  projectId: "...",
+  apiKey: "...",
+  container: "#fieldflow-directory-1a2b3c4d",
+  lang: "es",
+  languageSwitcher: true,
+  apiBaseUrl: "https://getfieldflow.io",
+});
+```
+
+- Leave `lang` out to match your web page's language (the `lang` attribute on your page's `<html>` tag)
+- A language your directory doesn't offer shows in English
+- When `lang` is set, visitors don't get a language menu unless you add `languageSwitcher: true` (directory embeds only)
+
+The Publish tab writes these lines for you when you pick a **Language**. See [Languages Overview](/languages/overview/).
 
 ## Embed modes
 
@@ -84,11 +115,15 @@ Add `theme: "light"` or `theme: "dark"` to force a theme. Leave it out to follow
 | `projectId` | string | required | Your project ID |
 | `apiKey` | string | required | API key from the Publish tab |
 | `container` | string | required | CSS selector for the element to render into |
-| `apiBaseUrl` | string | — | `https://getfieldflow.io`. Keep the value from your snippet |
+| `apiBaseUrl` | string | None | `https://getfieldflow.io`. Keep the value from your snippet |
 | `mode` | string | `"directory"` | `"directory"`, `"quiz"`, or `"quiz+directory"` |
-| `theme` | string | follows device | `"light"`, `"dark"`, or `"system"` |
-| `detailUrlTemplate` | string | — | Your own URL for detail pages |
-| `openRecordId` | string | — | Open this record's details on load (directory mode) |
-| `onComplete` | function | — | Quiz only: called when the quiz finishes |
-| `options.preFilter` | object | — | Categories to pre-select |
+| `theme` | string | `"light"` | `"light"`, `"dark"`, or `"system"` |
+| `lang` | string | matches the page | A language code, such as `"en"` or `"es"` |
+| `languageSwitcher` | boolean | `false` | Show the language menu when `lang` is set (directory mode) |
+| `detailUrlTemplate` | string | None | Your own URL for detail pages |
+| `openRecordId` | string | None | Open this record's details on load (directory mode) |
+| `onComplete` | function | None | Quiz only: called when the quiz finishes |
+| `options.preFilter` | object | None | Categories to pre-select |
+
+Options from older snippets, such as `showSearch`, `showFilters`, and `itemsPerPage`, are no longer used. You can leave them in or remove them.
 

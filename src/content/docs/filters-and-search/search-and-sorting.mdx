@@ -1,14 +1,43 @@
 ---
 title: Search & Sorting
-description: How search, sorting, and pagination work in your directory.
+description: How visitors search, filter, sort, and scroll through your directory.
 ---
+
+This page explains what visitors see when they use your directory, on the hosted page and in an embed.
+
+## Fast search and filters
+
+Most directories load all of their records at once when the page opens. After that, search, filters, and sorting update right away, with no waiting.
+
+Very large directories load in parts instead. They still work the same way for visitors, but each change can take a moment.
 
 ## Search
 
-Every directory has a search box. Visitors type and results update when they stop typing.
+Every directory has a search box at the top. Results update as visitors type.
 
 - Search looks for the text anywhere in a record's synced data
 - It works together with filters, so visitors can search within filtered results
+- If your directory has [translations](/languages/overview/), a search finds records in either language. A visitor reading in Spanish can type an English word, and the other way around
+
+## Results count and active filters
+
+A bar at the top of the results shows how many records match, for example **Showing 12 of 140 records**. The bar stays at the top of the screen while visitors scroll.
+
+When filters are on, they show in the same bar under **Active filters:** as chips. Visitors click a chip to remove that filter, or **Clear all** to remove every filter.
+
+If nothing matches, visitors see **Nothing matches those filters.** with a hint to try a different search or fewer filters.
+
+## Scrolling through results
+
+There are no page numbers. More records appear as visitors scroll down. At the bottom they see **You've reached the end.**
+
+:::note
+Quiz results pages are the exception. The hosted quiz page and the **Quiz + directory** embed still show results in pages with **Previous** and **Next** buttons.
+:::
+
+## Filters on phones
+
+On a phone, filters open in a panel that slides up from the bottom of the screen. Visitors can drag the panel down or swipe it away to close it.
 
 ## Sorting
 
@@ -16,21 +45,25 @@ Visitors pick a sort from the toolbar. The options are:
 
 | Option | What it does |
 |---|---|
-| **Default** | The default order |
+| **Suggested** | The default order |
 | **Name: A–Z** | By the card title field, A to Z |
 | **Name: Z–A** | By the card title field, Z to A |
 | **Recently added** | Newest records first |
-| **Sort by [taxonomy]** | Appears for each taxonomy with **Enable sorting** turned on |
+| **[Category name]** | Appears for each taxonomy with **Enable sorting** turned on, for example **Service Type** |
 
 To change which field "Name" sorts by, change the **card title** in **Configure** > **Display**. To add a taxonomy sort, turn on **Enable sorting** for it in **Configure** > **Filters & Sorting**.
 
-### Group by category
+### Group results under headings
 
-Visitors can also turn on **Group by category** in the sort controls to group cards under category headings.
+Next to the sort menu there's a switch named after your first filter category, for example **Sort by Service Type**. When a visitor turns it on, cards are grouped under a heading for each term in that category.
 
-## Pagination
+## Share a filtered view
 
-Results are split into pages. Visitors can:
-- Move between pages
-- See the total number of results
-- Change how many records show per page: 12, 20, 24, 48, or 96
+On the hosted directory page, the web address updates as visitors search, filter, and sort. They can bookmark the page or copy the address to share exactly what they're looking at.
+
+## What visitors can't change
+
+Earlier versions let visitors switch the card style and hide fields from the toolbar. Those choices now belong to you:
+
+- Pick the card style (Modern, Compact, or Detailed) in **Configure** > **Display** > **Card layout**. See [Card Layouts](/display/card-layouts/#card-layout)
+- Choose which fields show on cards in **Configure** > **Display**

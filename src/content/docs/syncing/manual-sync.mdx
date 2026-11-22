@@ -25,10 +25,12 @@ When it finishes, the sync appears at the top of **Recent syncs** with:
 ## What happens during a sync
 
 1. FieldFlow reads the rows from your Google Sheet
-2. It keeps only the columns you've mapped
-3. It adds records for new rows and updates records that changed
-4. It removes records for rows that are no longer in the sheet
+2. It finds each mapped column by its header in row 1, so moving or adding columns doesn't break your mappings
+3. It keeps only the columns you've mapped, plus any [translation columns](/languages/translate-records/)
+4. It updates existing records in place, adds records for new rows, and removes records for rows that are no longer in the sheet
 5. It updates taxonomy terms from your taxonomy columns
+
+Records keep their links when they're updated. To keep links stable when rows are inserted, deleted, or sorted, set a [record key](/syncing/record-key/).
 
 Your Google Sheet is never changed. FieldFlow only reads it.
 
@@ -39,3 +41,13 @@ Syncs run in the background. You can keep using the dashboard. You can't start a
 ## After syncing
 
 If you've added columns to your sheet, go to **Configure** > **Fields**, click **Fetch columns from sheet**, map the new columns, save, and sync again. New columns don't appear in your directory until they're mapped.
+
+### If you rename or delete a column header
+
+FieldFlow finds columns by their header. If a mapped column's header is renamed or deleted, the sync skips that column and keeps its previous values. The sync shows **Some columns were skipped. Their records kept the previous values.** with the names of the skipped columns.
+
+To fix it, put the header back, or click **Fetch columns from sheet** in **Configure** > **Fields** to update your mappings, then save and sync.
+
+## On the Free plan
+
+Syncing is paused on the Free plan. If you sync, nothing changes, and you'll see **Sync is paused on the Free plan. Your directory stays as it was. Upgrade to sync again.** See [Plans & Pricing](/billing/plans/).

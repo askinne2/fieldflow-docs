@@ -1,0 +1,105 @@
+---
+title: The Language Tab
+description: Reword interface text, translate filter labels, and add languages beyond English and Spanish.
+---
+
+Each project has a **Language** tab. Use it to:
+
+- Reword any line of interface text, like "Search records..." or "View Details"
+- Check your [translated record columns](/languages/translate-records/)
+- Translate [filter labels](#filter-labels)
+- [Add a language](#add-a-language) beyond English and Spanish
+
+Nothing you change here goes live until you save or publish it.
+
+:::note
+Editing on this tab is on the Starter plan and up. Drafting with Claude is on the Professional plan and up. On the Free plan, the tab shows an upgrade message instead. See [Plans & Pricing](/billing/plans/).
+:::
+
+## The languages list
+
+The **Languages** box lists every language in the project. **English** and **Español** are built in and marked **Built-in**. Languages you add show as **Draft**, **Published**, or **Unpublished**.
+
+A language can also show:
+- **Record data: 2 columns**: how many translation columns FieldFlow found in your sheet
+- A count of unpublished changes
+- A count of new lines that still need translating. Until you translate them, visitors see English for those lines
+
+Click **Edit strings** next to a language to open it below the list.
+
+## Reword interface text
+
+1. Click **Edit strings** next to the language
+2. Find the line. Use **Search strings**, or turn on **Only changed** to see just the lines you've edited
+3. Type the new wording. Edited lines are marked **Edited by you**. Click **Reset to default** on a line to undo your edit
+4. Click **Save draft** in the bar at the bottom of the screen, or **Discard** to throw away your changes
+5. Click **Preview draft** to open your directory with the draft applied. Only you and your team can see it
+6. Click **Publish [language]** and confirm. Visitors see the new wording after they reload the page
+
+To undo every edit to a built-in language, click **Reset all to default**. Published text stays until you publish again.
+
+## Filter labels
+
+The **Filter labels** section translates the names visitors see in your filters, like "Service Type" and "Food Pantry". It appears for every language except English.
+
+1. Open the language with **Edit strings**
+2. In **Filter labels**, type a translation in each box. Turn on **Only empty** to see just the boxes you haven't filled
+3. Click **Save filter labels**, or **Discard changes**
+
+Boxes you leave empty show in English.
+
+For Spanish, visitors see the labels as soon as you save. For a language you added, they see them once that language is published.
+
+On the Professional plan and up, click **Draft with Claude** to fill the empty boxes. Review the drafts, then save. Visitors don't see drafts until you save.
+
+Filter labels show up here once your sheet has a category column that visitors can filter by or see on cards. If the section is empty, add one and sync.
+
+## Add a language
+
+You can add a language from a list of common languages, such as French, Vietnamese, Chinese, Haitian Creole, and Tagalog.
+
+1. Click **Add language**
+2. Pick the language under **Language**
+3. Optional: under **Tone and wording notes**, tell Claude how to write. For example: "informal tú, call records 'recursos'"
+4. Choose how to start:
+   - **Draft with Claude** (Professional plan and up) writes a full first draft for you to review
+   - **Start blank and type it myself** gives you an empty language to fill in
+5. Review the lines, then click **Save draft**
+6. Click **Publish [language]** when it's ready
+
+To show your records in the new language too, add translation columns to your sheet with its code, such as `_fr`, then sync. See [Translate Your Records](/languages/translate-records/).
+
+A language you add appears in the visitor language menu only after it's published **and** at least one record has a translation in it.
+
+### Draft with Claude
+
+For a language you added, on the Professional plan and up, Claude can write translations for you:
+
+- **Draft all with Claude** (or **Redraft all with Claude**) drafts every line. Check **Include my edits** to redraft lines you already changed
+- **Draft the new lines with Claude** fills only lines that were added since your last draft
+- The redraft button on a single line drafts just that line
+
+Claude uses your **Tone and wording notes** each time. Always review drafts before you publish.
+
+There's a daily limit on Claude drafts for each project. If you reach it, try again the next day, or keep typing translations yourself.
+
+## Unpublish or delete a language
+
+For a language you added:
+
+- **Unpublish** takes it offline. Visitors see English. Your text is kept
+- **Delete** removes the language and all its text. This can't be undone
+
+## Record data and stale translations
+
+When you open a language other than English, the **Record data** section shows:
+
+- The translation columns FieldFlow found, such as `Description ← Description_es`, and how many cells are filled
+- Warnings about columns it couldn't use
+- Translations that may be out of date, with a **Still correct** button for each
+
+See [Translate Your Records](/languages/translate-records/) for what each warning means and how to clear stale translations.
+
+## Who can make changes
+
+Owners, Admins, and Editors can edit, draft, and publish. Viewers can open the tab and look, but can't change anything. See [Team Management](/billing/team/#roles).

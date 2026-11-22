@@ -10,7 +10,8 @@ The embed code is a small HTML snippet you paste into your website. It shows you
 1. Go to your project's **Publish** tab
 2. In **Embed on your site**:
    - Choose an **Embed type**: **Directory only**, **Quiz only**, or **Quiz + directory**
-   - Choose a theme: **System (follow device)**, **Light**, or **Dark**
+   - Choose an **Embed theme**: **Light** (the default), **Dark**, or **System (follow device)**
+   - Choose a **Language** (see [Language](#language))
    - Optionally, pre-select categories (see [Start with filters](#start-with-filters))
 3. Click **Copy code**
 4. Replace `YOUR_API_KEY` in the snippet with a key from **API keys for embed** on the same tab. See [API Keys](/publishing/api-keys/)
@@ -24,21 +25,27 @@ When you create a new API key, the confirmation panel has a **Copy full embed co
 A directory embed looks like this:
 
 ```html
-<div id="fieldflow-directory"></div>
+<div id="fieldflow-directory-1a2b3c4d" data-fieldflow-theme="light"></div>
 <script>
   window.FieldFlow = window.FieldFlow || { q: [] };
   window.FieldFlow.q.push({
     projectId: "your-project-id",
     apiKey: "YOUR_API_KEY",
-    container: "#fieldflow-directory",
+    container: "#fieldflow-directory-1a2b3c4d",
+    theme: "light",
     apiBaseUrl: "https://getfieldflow.io",
-    options: { showSearch: true, showFilters: true, itemsPerPage: 20 }
   });
 </script>
 <script src="https://getfieldflow.io/embed.js" async></script>
 ```
 
 Always copy the snippet from the Publish tab rather than typing it. It fills in your project ID and the options you picked.
+
+The container `id` ends with the first characters of your project ID. That way you can put directories from different projects on the same page.
+
+:::note[Older embed codes]
+Older embed codes may include a line like `options: { showSearch: true, showFilters: true, itemsPerPage: 20 }`. It's no longer used, and it's safe to leave in place. Search and filters always show, and results load as visitors scroll.
+:::
 
 ## Embed types
 
@@ -55,11 +62,29 @@ See [Quiz Flow](/quiz-flow/overview/) to set up a quiz.
 
 ## Theme
 
+- **Light** (default): always light
+- **Dark**: always dark. Use it on a dark page
 - **System (follow device)**: matches the visitor's light or dark mode setting
-- **Light**: always light
-- **Dark**: always dark
 
-Use Light or Dark to match your page's background. Light and Dark add a `theme` line to the snippet.
+The snippet always includes a `theme` line with your choice.
+
+:::note
+An embed whose code has no `theme` line now shows in light mode. Before this change, it followed the visitor's device. To keep following the device, copy a new embed code with **System (follow device)** selected.
+:::
+
+## Language
+
+The **Language** menu sets which language the embed starts in:
+
+- **Match page** (default): uses the language your web page is set to. If your page is in Spanish, the embed starts in Spanish. If your page's language isn't one your directory offers, it starts in English
+- **English**, **Español**, or another language you've published on the **Language** tab: the embed always starts in that language
+
+When your directory has [translated records](/languages/translate-records/), visitors also get a language menu in the embed:
+
+- With **Match page**, the menu shows automatically
+- With a fixed language, the menu is hidden unless you check **Show language switcher**. This option is only for **Directory only** embeds
+
+See [Languages Overview](/languages/overview/).
 
 ## Start with filters
 
@@ -73,9 +98,13 @@ The snippet updates automatically. Click **Clear pre-filter** to remove it.
 
 If no categories are listed, turn on **Enable filtering** for a taxonomy in **Configure** > **Filters & Sorting**, then sync.
 
+## Who can copy embed code
+
+Anyone on your team can build and copy embed code. Viewers can't create, reveal, or revoke API keys, or save a detail page URL template.
+
 ## Detail pages in embeds
 
-If [detail pages](/display/detail-pages/) are on, clicking a record opens its details inside the embed, with a **Back to directory** button. To open your own pages instead, see [Detail URL template](/embedding/advanced-options/#detail-url-template).
+If [detail pages](/display/detail-pages/) are on, clicking a record opens its details inside the embed, with a **Back to directory** button. The page address changes too, so visitors can copy it to share a link to that record. To open your own pages instead, see [Detail URL template](/embedding/advanced-options/#detail-url-template).
 
 ## Next steps
 

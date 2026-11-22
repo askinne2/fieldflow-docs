@@ -11,15 +11,21 @@ Automatic sync pulls fresh data from your Google Sheet on a schedule, so you don
 2. In the **Automatic sync** box, check **Enable automatic sync**
 3. Choose an **Interval**:
 
-| Interval | Good for |
-|---|---|
-| **Every 30 minutes** | Data that changes often during the day |
-| **Every hour** | Active directories with regular updates |
-| **Every 6 hours** | Directories updated a few times a day |
-| **Every 12 hours** | Directories updated once or twice a day (default) |
-| **Every 24 hours** | Directories updated daily or less |
+| Interval | Good for | Plans |
+|---|---|---|
+| **Every 30 minutes** | Data that changes often during the day | Enterprise |
+| **Every hour** | Active directories with regular updates | Professional and up |
+| **Every 6 hours** | Directories updated a few times a day | Professional and up |
+| **Every 12 hours** | Directories updated once or twice a day | Professional and up |
+| **Every 24 hours** | Directories updated daily or less | All paid plans |
 
 4. Click **Save schedule**
+
+Intervals your plan doesn't include stay in the list but can't be picked. They show which plan has them, for example **Every hour (Available on Professional)**.
+
+## If your plan changes
+
+If you saved a faster schedule than your current plan allows, for example after a downgrade, FieldFlow runs it at your plan's fastest interval. The Sync tab tells you, for example: **Saved as every hour. Your Starter plan runs it every 24 hours.**
 
 ## How it works
 
@@ -31,6 +37,7 @@ Automatic sync pulls fresh data from your Google Sheet on a schedule, so you don
 
 ## Requirements
 
+- A paid plan. Syncing is paused on the Free plan
 - Google Sheets must be connected for your organization
 - Your field mapping should be saved in **Configure** > **Fields**
 

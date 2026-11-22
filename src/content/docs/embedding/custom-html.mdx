@@ -10,15 +10,15 @@ FieldFlow works on any website that lets you add HTML. If your platform isn't Wo
 Copy your snippet from the project's **Publish** tab (see [Embed Code](/publishing/embed-code/)) and paste it where you want the directory to appear. It looks like this:
 
 ```html
-<div id="fieldflow-directory"></div>
+<div id="fieldflow-directory-1a2b3c4d" data-fieldflow-theme="light"></div>
 <script>
   window.FieldFlow = window.FieldFlow || { q: [] };
   window.FieldFlow.q.push({
     projectId: "YOUR_PROJECT_ID",
     apiKey: "YOUR_API_KEY",
-    container: "#fieldflow-directory",
+    container: "#fieldflow-directory-1a2b3c4d",
+    theme: "light",
     apiBaseUrl: "https://getfieldflow.io",
-    options: { showSearch: true, showFilters: true, itemsPerPage: 20 }
   });
 </script>
 <script src="https://getfieldflow.io/embed.js" async></script>
@@ -30,7 +30,7 @@ Replace `YOUR_API_KEY` with a key from the **Publish** tab.
 
 - Paste the whole snippet in your page's `<body>`, where the directory should appear
 - Keep the parts in the same order: the `<div>`, then the setup script, then the `embed.js` script
-- Keep the container `id` (`fieldflow-directory`, or `fieldflow-quiz` for a quiz-only embed) as it is in the snippet
+- Keep the container `id` exactly as it is in the snippet. It starts with `fieldflow-directory-` (or `fieldflow-quiz-` for a quiz-only embed) and ends with part of your project ID
 - Give the container room. FieldFlow needs at least 300px of height
 
 ## Styling the container
@@ -43,9 +43,13 @@ You can style the container element:
 
 FieldFlow's styles are scoped to the embed to avoid clashing with your page's CSS.
 
-## Placing the embed
+## More than one embed on a page
 
-We recommend one FieldFlow embed per page. Keep the container `id` from your snippet.
+You can put directories from different projects on the same page. Paste each snippet where you want it. Each one has its own container `id`, so they don't interfere with each other.
+
+## Page language
+
+With the default **Match page** language setting, the embed reads the `lang` attribute on your page's `<html>` tag. For a Spanish page, use `<html lang="es">`. See [Embed Code](/publishing/embed-code/#language).
 
 ## Platforms this works with
 
