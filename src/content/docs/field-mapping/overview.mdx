@@ -21,6 +21,8 @@ FieldFlow guesses a type for each column from its header name. For example, a he
 
 Click **Preview sample data** to see a few rows from your sheet while you map.
 
+Columns that end in a language code, like `description_es`, are translations. FieldFlow skips them here and uses them on the **Language** tab. See [Translate Your Records](/languages/translate-records/).
+
 ## Choose a purpose for each column
 
 Every column has a **Purpose**:
@@ -60,6 +62,9 @@ Click **Save all mappings**. Then run a sync from the **Sync** tab so your direc
 - You don't need to map every column. Only enable the ones you want
 - Keep field names short and clear. They appear in the layout builder
 - If a column holds several categories separated by commas, make it a **Taxonomy** with type **Multi-value**
-- If you add columns to your sheet later, click **Fetch columns from sheet** again, then save and sync
+- If you add columns to your sheet later, click **Fetch columns from sheet** again, then save and sync. Your existing mappings stay as they are
+- FieldFlow finds each column by its header, so you can add, move, or reorder columns in your sheet without breaking your mappings. If you rename a header, fetch columns again and set up the renamed column
+- If a mapped column was removed from the sheet, **Fetch columns from sheet** removes it from the list. Click **Save all mappings** to apply
+- To throw away all your mappings and start over from the sheet, click **Start from scratch**. This also resets your Display and Detail Page layouts when you save
 
 **Next:** [Field Types Reference →](/field-mapping/field-types/)

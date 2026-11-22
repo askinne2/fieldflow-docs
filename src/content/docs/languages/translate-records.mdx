@@ -1,0 +1,72 @@
+---
+title: Translate Your Records
+description: Add translation columns to your Google Sheet so records show in Spanish or another language.
+---
+
+You keep your English sheet as it is. Translations go in extra columns in the same tab, on the same rows. FieldFlow shows the translated text when a visitor picks that language.
+
+:::note
+Translated record columns are on the Starter plan and up. See [Plans & Pricing](/billing/plans/).
+:::
+
+## How to name a translation column
+
+Take the English column's header and add an underscore and the language code:
+
+| English column | Spanish column | French column |
+|---|---|---|
+| `Description` | `Description_es` | `Description_fr` |
+| `title` | `title_es` | `title_fr` |
+| `Services offered` | `Services offered_es` | `Services offered_fr` |
+
+Spanish (`_es`) is built in. For any other language, add it on the [Language tab](/languages/language-tab/#add-a-language) first, then add its columns.
+
+Headers are matched without regard to capital letters or extra spaces.
+
+## Add translations
+
+1. Add a translation column for each English column you want translated. You can put it anywhere in the tab, but the end of the tab is easiest to manage
+2. Fill in the translated text on the same row as the English text
+3. In FieldFlow, go to the **Sync** tab and click **Sync now**
+4. Go to the **Language** tab and select the language. The **Record data** section lists the columns FieldFlow found and how many cells are filled
+
+You don't map translation columns in **Configure** > **Fields**. When you click **Fetch columns from sheet**, FieldFlow skips them and says so.
+
+## Rules
+
+- **Empty cells show English.** Leave a cell empty and visitors see the English text for that field
+- **Copy text that stays the same.** If a value is the same in both languages, such as a place or a person's name, copy it into the translation column. Otherwise the detail page says the record is only partly translated
+- **Only text fields can be translated.** Columns mapped as **Text** or **Long Text** can have translations. Phone, Email, URL, and other types always show the English value, so a `phone_es` column is skipped
+- **Rename both columns together.** If you rename an English column, rename its translation columns too
+- **Delete a column to remove a translation.** Delete a translation column and sync, and those translations are removed
+- **Your record key isn't translated.** If you set a [record key](/syncing/record-key/), that column always shows the same value
+
+## What the warnings mean
+
+After a sync, the **Record data** section on the **Language** tab can show these lists:
+
+| Warning | What it means | What to do |
+|---|---|---|
+| **Columns with no English match** | The header looks like a translation, but no English column has that name | Check the spelling. The header must be the English header plus `_es` (or another code) |
+| **Columns that can't be translated** | The English column isn't a Text or Long Text field, or it's your record key | Remove that translation column, or change the English field's type |
+| **Used as regular fields** | The column is already mapped as its own field in **Configure** > **Fields**, so it's not used as a translation | In **Configure** > **Fields**, turn off its **Enabled** switch, click **Save all mappings**, and sync |
+
+A translation column for a category (taxonomy) column also shows as one that can't be translated. Translate category names and terms in [Filter labels](/languages/language-tab/#filter-labels) instead.
+
+## Out-of-date translations
+
+FieldFlow notices when the English text changes after a translation was made. Those translations are marked as possibly out of date:
+
+- On the **Language** tab, the language shows a count of stale translations. Open the list to see them, oldest first
+- On the hosted detail page, visitors see **Some of this information may be out of date in this language.**
+
+To clear one:
+
+- **If the translation needs fixing:** edit the cell in the translation column. It clears on the next sync
+- **If the English change didn't change the meaning:** click **Still correct** next to it on the **Language** tab
+
+## If you downgrade to Free
+
+Translated record columns aren't on the Free plan. Visitors keep seeing your translations until the next sync, then see English. Your columns stay in the sheet, so the translations come back when you upgrade and sync.
+
+**Next:** [The Language Tab →](/languages/language-tab/)

@@ -1,0 +1,56 @@
+---
+title: Record Key
+description: Keep each record's link the same even when rows in your sheet move.
+---
+
+Every record in your directory has a permanent link. A record key tells FieldFlow how to recognize the same record from one sync to the next, so that link keeps pointing to the right place.
+
+## How FieldFlow matches rows
+
+When you sync, FieldFlow updates each record in place. It doesn't delete and recreate records. To know which row is which record, it uses one of two methods:
+
+| Method | Keeps the record when you... | Breaks when you... |
+|---|---|---|
+| **Row position (default)** | Edit a cell | Insert, delete, or sort rows. Records below the change shift to a different row |
+| **A key column** | Edit any cell except the key, or insert, delete, or sort rows | Change the key cell. That creates a new record |
+
+If your sheet only ever gets edited in place, or new rows only get added at the bottom, row position works fine.
+
+If people insert rows in the middle, delete rows, or sort the sheet, set a key column.
+
+## Choose a good key column
+
+A good key column has a value in every row, and no two rows share a value. Examples:
+
+- An ID column, like `Resource ID` with values `R-001`, `R-002`
+- A name that never repeats and rarely changes
+
+The column must be mapped in **Configure** > **Fields** before you can pick it.
+
+## Set a record key
+
+1. Go to your project's **Sync** tab
+2. In the **Record key** box, open **Key column**
+3. Pick the column
+4. Click **Save key**
+
+FieldFlow checks the column when you save. If a row is blank, or two rows share a value, you'll see which rows to fix. For example: **Duplicate value "R-014" in rows 15 and 22.** Fix the sheet and click **Save key** again.
+
+To go back to the default, pick **Row position (default)** and click **Save key**.
+
+## If the key column has problems later
+
+If someone later leaves a key cell blank or repeats a value, the next sync fails and lists the rows to fix. Your directory stays as it was until the sync succeeds.
+
+If you unmap the key column, the **Record key** box warns you: **This column is no longer mapped. The next sync will fail until you map it again or choose Row position (default).**
+
+If the key column's header is renamed or deleted in the sheet, the sync fails until you restore the header or pick a different key.
+
+## Old links keep working
+
+Record links shared before this release still work. They forward to the record's current address.
+
+## Related
+
+- [Detail Pages](/display/detail-pages/#detail-page-urls)
+- [Manual Sync](/syncing/manual-sync/)

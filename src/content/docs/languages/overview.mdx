@@ -1,0 +1,77 @@
+---
+title: Languages Overview
+description: Show your directory in Spanish or another language, and let visitors pick.
+---
+
+FieldFlow can show your directory in more than one language. There are three parts to translate:
+
+| Part | Examples | Where you translate it |
+|---|---|---|
+| **Interface text** | "Search records...", "Clear all", "View Details" | Built in for English and Spanish. Reword it or add a language on the **Language** tab |
+| **Your records** | Names, descriptions, and other text from your sheet | Extra columns in your Google Sheet, such as `description_es`. See [Translate Your Records](/languages/translate-records/) |
+| **Filter labels** | Category names like "Service Type" and terms like "Food Pantry" | The **Filter labels** section of the **Language** tab. See [The Language Tab](/languages/language-tab/#filter-labels) |
+
+## What's included on each plan
+
+| Feature | Free | Starter | Professional and up |
+|---|---|---|---|
+| English and Spanish interface text | Yes | Yes | Yes |
+| Translated record columns | No | Yes | Yes |
+| Reword interface text, add languages, translate filter labels | No | Yes | Yes |
+| Draft translations with Claude | No | No | Yes |
+
+See [Plans & Pricing](/billing/plans/).
+
+## Get started with Spanish
+
+1. Add `_es` columns to your sheet for the text you want in Spanish. See [Translate Your Records](/languages/translate-records/)
+2. Fill in the Spanish text
+3. Run a sync from the **Sync** tab
+4. Open the **Language** tab, select **Español**, and check the **Record data** section
+5. Optional: translate your [filter labels](/languages/language-tab/#filter-labels)
+
+Spanish is built in, so you don't need to add or publish it.
+
+## What visitors see
+
+### The language switcher
+
+When your directory has at least one translated record in a second language, visitors get a **Language** menu in the toolbar. It lists English and each language that has translated records.
+
+Translating only the interface text or the filter labels doesn't add a language to the menu. A language needs at least one translated record.
+
+### On the hosted directory
+
+The hosted directory starts in English. Visitors can pick a language from the menu.
+
+To link straight to a language, add `?lang=` and the language code to the address:
+
+```
+https://getfieldflow.io/d/[your-project-id]?lang=es
+```
+
+Links inside the directory, such as detail pages, keep the visitor's language.
+
+### In an embed
+
+When you copy your embed code, choose a **Language** on the **Publish** tab:
+
+- **Match page** (default): the embed uses the language your website page is set to. Visitors can switch with the language menu
+- **English**, **Español**, or another published language: the embed always starts in that language. Check **Show language switcher** if you still want visitors to be able to switch
+
+See [Embed Code](/publishing/embed-code/#language).
+
+### Search
+
+Visitors can search in either language. A search finds a record whether the words match its English text or its translation.
+
+## Known limits
+
+- Quiz pages and quiz embeds show your record text and filter labels in English
+- Filter terms that no current record uses still show in English, and they don't appear in the **Filter labels** list
+- When visitors group results under headings, the order of the headings can change with the language
+- If two people save filter labels for the same language at the same time, the last save wins
+- **Preview draft** for an unpublished custom language doesn't show filter labels
+- Right-to-left languages, such as Arabic and Hebrew, aren't available yet
+
+**Next:** [Translate Your Records →](/languages/translate-records/)

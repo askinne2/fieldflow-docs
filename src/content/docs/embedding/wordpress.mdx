@@ -5,7 +5,7 @@ description: Step-by-step guide to embedding a FieldFlow directory on a WordPres
 
 import { Steps } from '@astrojs/starlight/components';
 
-FieldFlow works on any WordPress site — whether you're using the block editor (Gutenberg), Elementor, or the classic editor.
+FieldFlow works on any WordPress site, whether you use the block editor (Gutenberg), Elementor, or the classic editor.
 
 ## Block Editor (Gutenberg)
 
@@ -47,7 +47,7 @@ Your directory should now appear on the page.
 </Steps>
 
 :::tip
-In Elementor, the directory won't render in the visual editor — you'll see the raw HTML. Click **Preview** or view the published page to see the live directory.
+In Elementor, the directory won't render in the visual editor. You'll see the raw HTML instead. Click **Preview** or view the published page to see the live directory.
 :::
 
 ## Classic Editor
@@ -86,6 +86,12 @@ If you paste the embed code in the "Visual" tab, WordPress may strip or reformat
 - A WordPress plugin may be conflicting with the embed script
 - Try disabling caching plugins temporarily to test
 - Check if a security plugin is blocking external scripts
+
+**The directory is dark on a light page, or light on a dark page:**
+- Copy a new embed code with the right **Embed theme** (Light, Dark, or System). See [Embed Code](/publishing/embed-code/#theme)
+
+**The directory shows in the wrong language:**
+- With the **Match page** setting, the embed follows your site's language setting (**Settings** > **General** > **Site Language** in WordPress). To force a language, copy a new embed code with that **Language** selected. See [Embed Code](/publishing/embed-code/#language)
 
 **Styling looks off:**
 - Some WordPress themes apply aggressive CSS that overrides the embed

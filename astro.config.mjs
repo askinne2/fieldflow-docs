@@ -53,6 +53,14 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Languages',
+					items: [
+						{ label: 'Overview', slug: 'languages/overview' },
+						{ label: 'Translate Your Records', slug: 'languages/translate-records' },
+						{ label: 'The Language Tab', slug: 'languages/language-tab' },
+					],
+				},
+				{
 					label: 'Quiz Flow',
 					items: [
 						{ label: 'Overview', slug: 'quiz-flow/overview' },
@@ -66,6 +74,7 @@ export default defineConfig({
 						{ label: 'Manual Sync', slug: 'syncing/manual-sync' },
 						{ label: 'Automatic Sync', slug: 'syncing/automatic-sync' },
 						{ label: 'Sync History', slug: 'syncing/sync-history' },
+						{ label: 'Record Key', slug: 'syncing/record-key' },
 					],
 				},
 				{

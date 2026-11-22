@@ -1,6 +1,6 @@
 ---
 title: Detail Pages
-description: Give each record its own page with contact info, map, and hours.
+description: Give each record its own page with contact info, directions, and hours.
 ---
 
 Detail pages give each record in your directory its own full page. When a visitor clicks a card's action button, they see everything about that record.
@@ -23,14 +23,13 @@ Category tags appear in the header when the taxonomy uses the **Badge** or **Chi
 ### Sections
 Your fields, grouped into the sections you set up.
 
-### Contact Information
-Website, phone, email, and address fields are gathered into a contact card with click-to-call, email, and website links.
+### Contact & directions
+Contact fields are gathered into a **Contact & directions** panel beside the main content, with click-to-call, email, and website links. On a phone, the panel appears below the main content.
 
-### Map
-If the record has coordinates, a map card shows the location with an **Open in Google Maps** button.
+If the record has coordinates, the panel also has a **Get directions** button that opens the location in Google Maps.
 
 ### Hours
-A field named like "Hours" or "Schedule" appears in an **Hours** card with a clock icon.
+A field named like "Hours" or "Schedule" shows with a clock icon.
 
 ## Set up sections
 
@@ -44,9 +43,11 @@ Go to **Configure** > **Detail Page**.
 3. Sections appear on the page in the order listed
 4. Use **Remove section** to delete one
 
-The **Detail page preview** shows how it will look.
+The **Detail page preview** shows a real record from your directory with your draft sections and your saved colors. Click **Desktop** or **375px** to check it at desktop or phone width.
 
-The fields you can pick come from **Configure** > **Display**. If you added columns there, use the **Tools** box to sync the section structure with your current Display layout.
+When you have unsaved changes, a bar appears at the bottom of the screen. Click **Save** to keep them or **Discard** to undo them.
+
+The fields you can pick come from **Configure** > **Display**. If you added columns there, click **Refresh data fields**.
 
 ## Detail page URLs
 
@@ -56,7 +57,11 @@ On the hosted directory, each record has a shareable URL like:
 https://getfieldflow.io/p/[projectId]/[recordId]
 ```
 
-In an embed, the detail view opens inside the embed. To send visitors to pages on your own site instead, see [Advanced Embed Options](/embedding/advanced-options/#detail-url-template).
+A record's URL is permanent. When you edit the row in your sheet and sync, the record keeps the same URL. Links shared before this change still work: they forward to the record's current address.
+
+If rows in your sheet get inserted, deleted, or sorted, set a [record key](/syncing/record-key/) so each record keeps its URL.
+
+In an embed, the detail view opens inside the embed, and the page address changes so visitors can share a link straight to that record. To send visitors to pages on your own site instead, see [Advanced Embed Options](/embedding/advanced-options/#detail-url-template).
 
 ## Buttons on the detail page
 
@@ -64,3 +69,9 @@ The hosted detail page has:
 - **Back to Directory** (or **Back to results** if the visitor came from a quiz)
 - **Share**: opens your device's share menu, or copies the link
 - **Print**: opens a print-friendly view
+
+## Translated detail pages
+
+If your directory has [translations](/languages/overview/), a visitor reading in another language sees the translated text. Fields with no translation show in English. The page then shows **Information partially available in this language.**
+
+If the English text changed after it was translated, the page shows **Some of this information may be out of date in this language.** See [Translate Your Records](/languages/translate-records/#out-of-date-translations).
